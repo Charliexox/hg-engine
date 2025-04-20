@@ -309,6 +309,8 @@ $(MOVESUBANIM_NARC): $(MOVESUBANIM_OBJS)
 NARC_FILES += $(MOVESUBANIM_NARC)
 REQUIRED_DIRECTORIES += $(MOVESUBANIM_DIR)
 
+clean_anim_scripts:
+	rm -rf $(MOVE_ANIM_SCRIPT_OUTPUT_DIR) $(MOVEANIM_NARC) $(MOVESUBANIM_NARC)
 
 MOVE_SEQ_DIR := $(MOVE_ANIM_SCRIPT_OUTPUT_DIR)/battle_move_seq
 MOVE_SEQ_OBJ_DIR := $(MOVE_ANIM_SCRIPT_OUTPUT_DIR)/objects/battle_move_seq
@@ -321,7 +323,7 @@ MOVE_SEQ_OBJS := $(patsubst $(MOVE_SEQ_DEPENDENCIES_DIR)/%.s,$(MOVE_SEQ_DIR)/0_%
 
 $(MOVE_SEQ_DIR)/0_%:$(MOVE_SEQ_DEPENDENCIES_DIR)/%.s
 	$(AS) -c $< -o $(patsubst $(MOVE_SEQ_DEPENDENCIES_DIR)/%.s,$(MOVE_SEQ_OBJ_DIR)/0_%.o,$<)
-	$(LD) -T linker.ld -o $(patsubst $(MOVE_SEQ_DEPENDENCIES_DIR)/%.s,$(MOVE_SEQ_OBJ_DIR)/0_%_linked.o,$<) $(patsubst $(MOVE_SEQ_DEPENDENCIES_DIR)/%.s,$(MOVE_SEQ_OBJ_DIR)/0_%.o,$<)
+	$(LD) -T $(C_SUBDIR)/linker.ld -o $(patsubst $(MOVE_SEQ_DEPENDENCIES_DIR)/%.s,$(MOVE_SEQ_OBJ_DIR)/0_%_linked.o,$<) $(patsubst $(MOVE_SEQ_DEPENDENCIES_DIR)/%.s,$(MOVE_SEQ_OBJ_DIR)/0_%.o,$<)
 	$(OBJCOPY) -O binary $(patsubst $(MOVE_SEQ_DEPENDENCIES_DIR)/%.s,$(MOVE_SEQ_OBJ_DIR)/0_%_linked.o,$<) $@
 
 $(MOVE_SEQ_NARC): $(MOVE_SEQ_OBJS)
@@ -344,7 +346,7 @@ BATTLE_EFF_OBJS := $(patsubst $(BATTLE_EFF_DEPENDENCIES_DIR)/%.s,$(BATTLE_EFF_DI
 
 $(BATTLE_EFF_DIR)/0_%:$(BATTLE_EFF_DEPENDENCIES_DIR)/%.s
 	$(AS) -c $< -o $(patsubst $(BATTLE_EFF_DEPENDENCIES_DIR)/%.s,$(BATTLE_EFF_OBJ_DIR)/0_%.o,$<)
-	$(LD) -T linker.ld -o $(patsubst $(BATTLE_EFF_DEPENDENCIES_DIR)/%.s,$(BATTLE_EFF_OBJ_DIR)/0_%_linked.o,$<) $(patsubst $(BATTLE_EFF_DEPENDENCIES_DIR)/%.s,$(BATTLE_EFF_OBJ_DIR)/0_%.o,$<)
+	$(LD) -T $(C_SUBDIR)/linker.ld -o $(patsubst $(BATTLE_EFF_DEPENDENCIES_DIR)/%.s,$(BATTLE_EFF_OBJ_DIR)/0_%_linked.o,$<) $(patsubst $(BATTLE_EFF_DEPENDENCIES_DIR)/%.s,$(BATTLE_EFF_OBJ_DIR)/0_%.o,$<)
 	$(OBJCOPY) -O binary $(patsubst $(BATTLE_EFF_DEPENDENCIES_DIR)/%.s,$(BATTLE_EFF_OBJ_DIR)/0_%_linked.o,$<) $@
 
 $(BATTLE_EFF_NARC): $(BATTLE_EFF_OBJS)
@@ -365,7 +367,7 @@ BATTLE_SUB_OBJS := $(patsubst $(BATTLE_SUB_DEPENDENCIES_DIR)/%.s,$(BATTLE_SUB_DI
 
 $(BATTLE_SUB_DIR)/1_%:$(BATTLE_SUB_DEPENDENCIES_DIR)/%.s
 	$(AS) -c $< -o $(patsubst $(BATTLE_SUB_DEPENDENCIES_DIR)/%.s,$(BATTLE_SUB_OBJ_DIR)/1_%.o,$<)
-	$(LD) -T linker.ld -o $(patsubst $(BATTLE_SUB_DEPENDENCIES_DIR)/%.s,$(BATTLE_SUB_OBJ_DIR)/1_%_linked.o,$<) $(patsubst $(BATTLE_SUB_DEPENDENCIES_DIR)/%.s,$(BATTLE_SUB_OBJ_DIR)/1_%.o,$<)
+	$(LD) -T $(C_SUBDIR)/linker.ld -o $(patsubst $(BATTLE_SUB_DEPENDENCIES_DIR)/%.s,$(BATTLE_SUB_OBJ_DIR)/1_%_linked.o,$<) $(patsubst $(BATTLE_SUB_DEPENDENCIES_DIR)/%.s,$(BATTLE_SUB_OBJ_DIR)/1_%.o,$<)
 	$(OBJCOPY) -O binary $(patsubst $(BATTLE_SUB_DEPENDENCIES_DIR)/%.s,$(BATTLE_SUB_OBJ_DIR)/1_%_linked.o,$<) $@
 
 $(BATTLE_SUB_NARC): $(BATTLE_SUB_OBJS)
@@ -374,6 +376,8 @@ $(BATTLE_SUB_NARC): $(BATTLE_SUB_OBJS)
 NARC_FILES += $(BATTLE_SUB_NARC)
 REQUIRED_DIRECTORIES += $(BATTLE_SUB_DIR) $(BATTLE_SUB_OBJ_DIR)
 
+clean_battle_scripts:
+	rm -rf $(MOVE_ANIM_SCRIPT_OUTPUT_DIR) $(MOVE_SEQ_NARC) $(BATTLE_SUB_NARC) $(BATTLE_EFF_NARC)
 
 ITEMGFX_DIR := $(BUILD)/a018
 ITEMGFX_NARC := $(BUILD_NARC)/a018.narc
@@ -520,22 +524,21 @@ SDAT_TARGET := $(FILESYS)/data/sound/gs_sound_data.sdat
 SDAT_DEPENDENCIES_DIR := sound/cries
 
 SDAT_SRCS := $(wildcard $(SDAT_DEPENDENCIES_DIR)/*.wav)
-SDAT_MED_OBJS := $(patsubst $(SDAT_DEPENDENCIES_DIR)/%.wav,$(SDAT_OBJ_DIR)/WAVARC/WAVE_ARC_PV%/00.swav,$(SDAT_SRCS))
-SDAT_SWAR_OBJS := $(patsubst $(SDAT_DEPENDENCIES_DIR)/%.wav,$(SDAT_OBJ_DIR)/WAVARC/WAVE_ARC_PV%.swar,$(SDAT_SRCS))
+SDAT_SWAR_OBJS := $(patsubst $(SDAT_DEPENDENCIES_DIR)/%.wav,$(SDAT_OBJ_DIR)/WAVARC/WAVE_ARC_PV%/00.swav,$(SDAT_SRCS))
 
 $(SDAT_OBJ_DIR)/WAVARC/WAVE_ARC_PV%/00.swav:$(SDAT_DEPENDENCIES_DIR)/%.wav
 	mkdir -p $(SDAT_OBJ_DIR)/WAVARC/WAVE_ARC_PV$$(basename "$<" .wav)
 	$(NTRWAVTOOL) $< $@ 16384 --adpcm-xq $(ADPCMXQ) --temp-file-dir build/sdat/temp
 
-$(SDAT_OBJ_DIR)/WAVARC/WAVE_ARC_PV%.swar:$(SDAT_OBJ_DIR)/WAVARC/WAVE_ARC_PV%/00.swav
-	$(SWAV2SWAR) $< $@
-
 # we need to unpack the sdat
-# move the swav/swar/sbnk over
+# move the swav/sbnk over
+# swar rebuilding is handled by sdattool
 # reorder cries 387+ to be numerical order in the FileBlock.json and InfoBlock.json
 $(SDAT_BUILD):$(SDAT_SWAR_OBJS)
 	$(SDATTOOL) -u $(SDAT_TARGET) $(SDAT_DIR)
-	cp -r $(SDAT_OBJ_DIR)/* $(SDAT_FILES_DIR)
+	cp -rf $(SDAT_OBJ_DIR)/* $(SDAT_FILES_DIR)
+	@# trigger rebuild here
+	rm -rf $(SDAT_FILES_DIR)/WAVARC/*.swar
 	$(PYTHON) scripts/rebuild_json.py
 	$(SDATTOOL) -b $@ $(SDAT_DIR)
 
