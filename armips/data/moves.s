@@ -3024,7 +3024,7 @@ movedata MOVE_SLUDGE_BOMB, "Sludge Bomb"
     type TYPE_POISON
     accuracy 100
     pp 10
-    effectchance 30
+    effectchance 10
     target RANGE_SINGLE_TARGET
     priority 0
     flags FLAG_MIRROR_MOVE | FLAG_PROTECT
