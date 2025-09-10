@@ -6,9 +6,6 @@
 #define OVERWORLD_SIZE_SMALL 0x4E27
 #define OVERWORLD_SIZE_SMALL_NO_SHADOW 0x4E26
 #define OVERWORLD_SIZE_LARGE 0x5208
-#define NEW_NPC_START 7000
-#define NEW_NPC_GFX_START 1550 // exact number may depend--it is the number of the first overworld gfx that is not used in the overworld table
-#define NEW_NPC_ENTRY(num) {.tag = NEW_NPC_START + num, .gfx = NEW_NPC_GFX_START + num, .callback_params = 0x0000}
 
 /*
  *  if you would like to add new overworlds, go to
