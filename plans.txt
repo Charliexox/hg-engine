@@ -1,5 +1,3 @@
-eusine claim passerby boy and stat trainers trainerids, meaning battles x 3
-eusine mega dragonite?
 EUSINE TEXT FROM SUICUNE HUNT ADAPTED TO BE ABOUT BATTLES
 
 kris at union cave exit DONE
@@ -12,6 +10,267 @@ kris story is defeating rocket to PROTECT/avenge kurt, ethan's story is racing a
 kris sprite gotta move across to the right a lil
 LANCE TO HOLD OFF PROTON AT MAHOGANY TOWN SO KRIS AND PLAYER CAN GO DOWN TOGETHER
 kris fights alongside instead of Lance, using his slot
+
+
+DIVIDE DAMAGE BY TWO FOR CACOPHONY
+<<<<<<< HEAD
+    // handle CACOPHONY TODO uncomment
+    if (DefendingMon.ability == ABILITY_CACOPHONY && IsMoveSoundBased(moveno))
+    {
+        damage /= 2;
+    }
+=======
+
+REIMPLEMENT THIS FOR FROSTBITE WHEREVER IT LIVES
+
+<<<<<<< HEAD
+int GetBattlerStatusCondition(struct BattleStruct *ctx, int battlerId) {
+    if (ctx->battlemon[battlerId].condition & STATUS_SLEEP) {
+        return CONDITION_SLEEP;
+    } else if (ctx->battlemon[battlerId].condition & STATUS_POISON) {
+        return CONDITION_POISON;
+    } else if (ctx->battlemon[battlerId].condition & STATUS_BURN) {
+        return CONDITION_BURN;
+    } else if (ctx->battlemon[battlerId].condition & STATUS_FREEZE) {
+        return CONDITION_FREEZE;
+    } else if (ctx->battlemon[battlerId].condition & STATUS_PARALYSIS) {
+        return CONDITION_PARALYSIS;
+    } else if (ctx->battlemon[battlerId].condition & STATUS_BAD_POISON) {
+        return CONDITION_POISON;
+    } else if (ctx->battlemon[battlerId].condition & STATUS_FROSTBITE) {
+        return CONDITION_FROSTBITE;
+    }
+
+    return CONDITION_NONE;
+=======
+
+GRASS COAT SPDEF AND DEF
+    // handle grass pelt
+    if ((MoldBreakerAbilityCheck(sp, attacker, defender, ABILITY_GRASS_PELT) == TRUE) && (sp->terrainOverlay.type == GRASSY_TERRAIN && sp->terrainOverlay.numberOfTurnsLeft > 0))
+    {
+        defense = defense * 150 / 100;
+    }
+	
+mAKE SURE DEFENSIVE ABILITIES WORK
+
+<<<<<<< HEAD
+
+    // handle fluffy
+    if (DefendingMon.ability == ABILITY_FLUFFY) {
+        if (IsContactBeingMade(bw, sp)) {
+            movepower = movepower * 50 / 100;
+        }
+
+        if (movetype == TYPE_FIRE) {
+            movepower = movepower * 200 / 100;
+        }
+    }
+    }
+
+    // handle fur coat - double defense
+    if ((MoldBreakerAbilityCheck(sp, attacker, defender, ABILITY_FUR_COAT) == TRUE))
+    {
+        defense *= 2;
+    }
+
+    // handle ice scales - halve damage if move is special, regardless of if it uses defense stat
+    if (MoldBreakerAbilityCheck(sp, attacker, defender, ABILITY_ICE_SCALES) == TRUE && movesplit == SPLIT_SPECIAL)
+    {
+        movepower /= 2;
+    }
+
+=======
+
+REIMPLEMENT ALL THIS SHIT
+<<<<<<< HEAD
+        switch (sp->terrainOverlay.type)
+        {
+        case ELECTRIC_TERRAIN:
+            if (IsClientGrounded(sp, defender) && moveno == MOVE_RISING_VOLTAGE) {
+                movepower = movepower * 2;
+            }
+            break;
+        case MISTY_TERRAIN:
+            if (IsClientGrounded(sp, attacker) && moveno == MOVE_MISTY_EXPLOSION) {
+                movepower = movepower * 15 / 10;
+            }
+            break;
+        case PSYCHIC_TERRAIN:
+            if (IsClientGrounded(sp, attacker) && moveno == MOVE_EXPANDING_FORCE) {
+                movepower = movepower * 15 / 10;
+            }
+            break;
+        default:
+            break;
+        }
+    }
+
+    // handle grav apple
+    if ((sp->field_condition & FIELD_STATUS_GRAVITY) && (moveno == MOVE_GRAV_APPLE))
+    {
+        movepower = movepower * 15 / 10;
+    }
+
+    // handle weather boosts
+    if ((CheckSideAbility(bw, sp, CHECK_ABILITY_ALL_HP, 0, ABILITY_CLOUD_NINE) == 0) &&
+        (CheckSideAbility(bw, sp, CHECK_ABILITY_ALL_HP, 0, ABILITY_AIR_LOCK) == 0))
+    {
+        if ((field_cond & WEATHER_SUNNY_ANY) && (AttackingMon.ability == ABILITY_SOLAR_POWER))
+        {
+            sp_attack = sp_attack * 15 / 10;
+        }
+        if ((field_cond & WEATHER_SANDSTORM_ANY) &&
+            ((DefendingMon.type1 == TYPE_ROCK) || (DefendingMon.type2 == TYPE_ROCK)))
+        {
+            sp_defense = sp_defense * 15 / 10;
+        }
+        if ((field_cond & WEATHER_SNOW_ANY) &&
+            ((DefendingMon.type1 == TYPE_ICE) || (DefendingMon.type2 == TYPE_ICE)))
+        {
+            defense = defense * 15 / 10;
+        }
+        if ((field_cond & WEATHER_SUNNY_ANY) &&
+            (CheckSideAbility(bw, sp, CHECK_ABILITY_SAME_SIDE_HP, attacker, ABILITY_FLOWER_GIFT)))
+        {
+            attack = attack * 15 / 10;
+        }
+        if ((field_cond & WEATHER_SUNNY_ANY) &&
+            (AttackingMon.ability != ABILITY_MOLD_BREAKER) &&
+            (CheckSideAbility(bw, sp, CHECK_ABILITY_SAME_SIDE_HP, defender, ABILITY_FLOWER_GIFT)))
+        {
+            sp_defense = sp_defense * 15 / 10;
+        }
+    }
+
+    u16 equivalentAttack;
+    u16 equivalentDefense;
+    getEquivalentAttackAndDefense(sp, attack, defense, sp_attack, sp_defense, atkstate, defstate, spatkstate, spdefstate, &movesplit, attacker, defender, critical, moveno, &equivalentAttack, &equivalentDefense);
+
+    //// halve the defense if using selfdestruct/explosion
+    //if (sp->moveTbl[moveno].effect == MOVE_EFFECT_HALVE_DEFENSE)
+    //    defense = defense / 2;
+
+    damage = equivalentAttack * movepower;
+    damage *= (level * 2 / 5 + 2);
+
+    damage = damage / equivalentDefense;
+    damage /= 50;
+
+    // handle parental bond
+    if (sp->oneTurnFlag[attacker].parental_bond_flag == 2) {
+        damage /= 4;
+    }
+    switch (sp->oneTurnFlag[attacker].parental_bond_flag) {
+        case 1:
+            sp->oneTurnFlag[attacker].parental_bond_flag++;
+            sp->oneTurnFlag[attacker].parental_bond_is_active = TRUE; // after first hit, set this flag just in case the ability is nullified after the first one
+            break;
+        default:
+            sp->oneTurnFlag[attacker].parental_bond_flag = 0;
+            break;
+    }
+
+    // handle physical moves
+    if (movesplit == SPLIT_PHYSICAL)
+    {
+        // burns halve physical damage.  this is ignored by guts and facade (as of gen 6)
+        if ((AttackingMon.condition & STATUS_BURN) && (AttackingMon.ability != ABILITY_GUTS) && (moveno != MOVE_FACADE))
+        {
+            damage /= 2;
+        }
+
+        // handle reflect
+        if (((side_cond & SIDE_STATUS_REFLECT) != 0)
+         && (critical == 1)
+         && (sp->moveTbl[moveno].effect != MOVE_EFFECT_REMOVE_SCREENS)
+         && (AttackingMon.ability != ABILITY_INFILTRATOR))
+        {
+            if ((battle_type & BATTLE_TYPE_DOUBLE) && (CheckNumMonsHit(bw, sp, 1, defender) == 2))
+            {
+                damage = damage * 2 / 3;
+            }
+            else
+            {
+                damage /= 2;
+            }
+        }
+    }
+    else// if (movesplit == SPLIT_SPECIAL) // same as above, handle special moves
+    if (movesplit == SPLIT_SPECIAL)
+	{
+        // frostbite halves special damage.  this is ignored by guts and facade for parity with burn
+		if ((AttackingMon.condition & STATUS_FROSTBITE) && (AttackingMon.ability != ABILITY_GUTS) && (moveno != MOVE_FACADE))
+        {
+            damage /= 2;
+        }
+		
+		// handle light screen
+        if (((side_cond & SIDE_STATUS_LIGHT_SCREEN) != 0)
+         && (critical == 1)
+         && (sp->moveTbl[moveno].effect != MOVE_EFFECT_REMOVE_SCREENS)
+         && (AttackingMon.ability != ABILITY_INFILTRATOR))
+        {
+            if ((battle_type & BATTLE_TYPE_DOUBLE) && (CheckNumMonsHit(bw, sp, 1, defender) == 2))
+            {
+                damage = damage * 2 / 3;
+            }
+            else
+            {
+                damage /= 2;
+            }
+        }
+    }
+
+    if ((battle_type & BATTLE_TYPE_DOUBLE) &&
+        (sp->moveTbl[moveno].target == 0x4) &&
+        (CheckNumMonsHit(bw, sp, 1, defender) == 2))
+    {
+        damage = damage * 3 / 4;
+    }
+
+    if ((battle_type & BATTLE_TYPE_DOUBLE) &&
+        (sp->moveTbl[moveno].target == 0x8) &&
+        (CheckNumMonsHit(bw, sp, 1, defender) >= 2))
+    {
+        damage = damage * 3 / 4;
+    }
+
+    // handle weather inate type boosts
+    if ((CheckSideAbility(bw, sp, CHECK_ABILITY_ALL_HP, 0, ABILITY_CLOUD_NINE) == 0) &&
+        (CheckSideAbility(bw, sp, CHECK_ABILITY_ALL_HP, 0, ABILITY_AIR_LOCK) == 0))
+    {
+        if (field_cond & WEATHER_RAIN_ANY) // handle rain boosts
+        {
+            switch (movetype)
+            {
+            case TYPE_FIRE:
+                damage /= 2;
+                break;
+            case TYPE_WATER:
+                damage = damage * 15 / 10;
+                break;
+            }
+        }
+
+        if ((field_cond & (FIELD_STATUS_FOG | WEATHER_HAIL_ANY | WEATHER_SANDSTORM_ANY | WEATHER_RAIN_ANY | WEATHER_SNOW_ANY)) && (moveno == MOVE_SOLAR_BEAM || moveno == MOVE_SOLAR_BLADE)) // solar beam nerf
+        {
+            damage /= 2;
+        }
+
+        if (field_cond & WEATHER_SUNNY_ANY) // sun boosts fire but nerfs water
+        {
+            switch (movetype)
+            {
+            case TYPE_FIRE:
+                damage = damage * 15 / 10;
+                break;
+            case TYPE_WATER:
+                // If the current weather is Sunny Day and the user is not holding Utility Umbrella, this move's damage is multiplied by 1.5 instead of halved for being Water type.
+                if (moveno == MOVE_HYDRO_STEAM && item != ITEM_UTILITY_UMBRELLA) {
+                    damage = damage * 15 / 10;
+                } else {
+                    damage /= 2;
+=======
 
 make skarmory falkner-rematch ace, move salamence somewhere else
 reorganise misty AND erika to have starmie and victreebel as megas
@@ -41,6 +300,7 @@ To be done (A=Now possible, B= Possible with work, C= Possible with further inve
 - NEW PC STRUCTURE RELOCAITNG B 
 - PC GAMERS like celio and sutff REORGANISING B
 - PHONEBOOK OVERHAUL B
+- LEAF BLADE ON SPECIAL SCEPTILE FUNCTIONS LIKE PSYSHOCK A
 
         case PLAYER_STATE_WALKING:
             return SPRITE_HEROINE;
@@ -193,7 +453,7 @@ kevin with delcatty, NO
 get prof elms assistant to always be lyra with marill, catching tutorial, daycare, fashion case NO
 ethan as the shoes guy with phanpy, seen again running through johto, vs recorder NO
 darkgem add zubat behind rival 
-kris as kurt grandchild with misdreavus NO
+kris as kurt grandchild with misdreavus NO, met at dark cave, celebi event, team rocket hq
 dragongem dratini behind eusine NO
 
 VSSPRITES: hoenns in ORAS, Caitlin in GenV, ANABEL/CYRUS in GENVII. Unsprited = Kevin, Kris, Eusine, Barry, Ethan, Lyra, Juan, Cyrus, Jupiter, Mars, Saturn, Charon, Yellow, Green, Leaf
@@ -331,5 +591,25 @@ Pre-victory road, battle kimonos then silver wing which in combo with rainbow su
 At HOF given megaring or whatever by Rowan, certified by Oak as Champion meaning you can use bring external pokemon into johto. 
 Birch (after discussing with professor ivy from sevii) gives regional berries
 SECOND SET OF KIMONO GIRLS AS OBSTACLE TO GET TO ERIKA
-After red beaten, you get red shard. then rainbow giovanni arrives through ultra-wormhole using mewtwo's power and bringing paradoxes. Bill arrives and tells you that 4 shards of the pallet star piece needed for machine to function  
-Star piece is required by celio to open wormhole at oak's lab. Requires RBYG shards from red, leaf(blue's shard), yellow, green. Once operational gym leaders of hoenn enter and disperse to tame paradox pokemon under wallace's instruction. Steven gives Z-ring and tells you to find and battle hoenn leaders.  
+After red beaten, you get red shard. then rainbow giovanni arrives through ultra-wormhole using mewtwo's power, changing elements of reality bringing paradoxes. 
+Bill arrives and tells you that 4 shards of the pallet star piece needed by celio for machine to function that can close the wormhole. Requires RBYG shards from red, leaf(blue's shard), yellow, green. 
+Once operational gym leaders of hoenn enter and disperse to tame paradox pokemon under wallace's instruction. 
+Steven gives Z-ring and tells you to find all 18 stones by battling hoenn leaders, brendan, may, shelley, matt (lanette, brigette). 
+Hayley and Bebe have worked together to setup the paradox enclosure at cliff caves
+
+Cynthia has beaten cyrus at spear pillar and fled to johto via sinjoh to hide the plates of arceus among the sinnoh leaders. These can control arceus. 
+Once they are beaten Cynthia says she trusts you are strong but will need to be able to best her if you have any chance against cyrus. After beating her you can fight cyrus. 
+
+Celio assembles 4 shards to make star piece to get wish from jirachi to ??call out hoenn leaders. 
+Giovanni in alternate universe had archie (leaf) maxie (red) and cyrus (green) collect shards to cause rip in spacetime. In celebi past event, we see giovanni get beaten by yellow after us. 
+hayley and bebe setting up the paradox enclosure at cliff cave
+lanette and bridgette organise the z ring
+
+
+mythical events (available post-red):
+jirachi with star piece at white stone in first route of kanto, discard by celio
+manaphy with manaphy egg which can be placed into the pool at ecruteak to allow manaphy to be battled. phione surrounding. egg obtained by battling cheryl.
+shaymin with oaks letter which notarises someone to take care of shaymin. Marley taking care of it, battled to obtain. 
+darkrai with member card to pokefan club, president asks player to go ship to fullmoon. Riley warns is too strong for player, won't let you face until beaten.
+cresselia with lunar wing from pewter city guy to kurt, tells player to go ship to newmoon. myra   
+heatran from magma stone with buck at mt mortar. He battles u for ownership of it before conceding ownership
