@@ -3,7 +3,23 @@
 #include "../include/constants/item.h"
 #include "../include/bag.h"
 #include "../include/constants/file.h"
-
+#include "../include/types.h"
+#include "../include/battle.h"
+#include "../include/config.h"
+#include "../include/debug.h"
+#include "../include/map_events_internal.h"
+#include "../include/overlay.h"
+#include "../include/pokemon.h"
+#include "../include/rtc.h"
+#include "../include/save.h"
+#include "../include/script.h"
+#include "../include/constants/ability.h"
+#include "../include/constants/game.h"
+#include "../include/constants/hold_item_effects.h"
+#include "../include/constants/moves.h"
+#include "../include/constants/species.h"
+#include "../include/constants/sprites.h"
+#include "../include/constants/weather_numbers.h"
 
 void Repel_SetCurrentType();
 
@@ -73,4 +89,110 @@ void Repel_SetCurrentType() {
 
     CurrentRepelType = item_id;
 #endif
+}
+
+u32 LONG_CALL PlayerAvatar_GetSpriteByStateAndGender(u32 state, int gender) {
+	debug_printf("garbageparams\n");
+	if (gender == 0) {
+        debug_printf("in gender0\n");
+		switch (state) {
+        case PLAYER_STATE_WALKING:
+            return SPRITE_HERO;
+        case PLAYER_STATE_CYCLING:
+            return SPRITE_CYCLEHERO;
+        case PLAYER_STATE_SURFING:
+            return SPRITE_SWIMHERO;
+        case PLAYER_STATE_UNK_SP:
+            return SPRITE_SPHERO;
+        case PLAYER_STATE_UNK_WATER:
+            return SPRITE_WATERHERO;
+        case PLAYER_STATE_FISHING:
+            return SPRITE_FISHINGHERO;
+        case PLAYER_STATE_UNK_POKE:
+            return SPRITE_POKEHERO;
+        case PLAYER_STATE_SAVING:
+            return SPRITE_SAVEHERO;
+        case PLAYER_STATE_HEAL:
+            return SPRITE_BANZAIHERO;
+        case PLAYER_STATE_LADDER:
+            return SPRITE_LADDERHERO;
+        case PLAYER_STATE_ROCKET:
+            return SPRITE_RHERO;
+        case PLAYER_STATE_ROCKET_HEAL:
+            return SPRITE_RBANZAIHERO; case PLAYER_STATE_POKEATHLON:
+            return SPRITE_PKTHHERO;
+        case PLAYER_STATE_APRICORN_SHAKE:
+            return SPRITE_SHAKEHERO;
+        case PLAYER_STATE_ROCKET_SAVING:
+            return SPRITE_SAVERHERO;
+        }
+    } else if (gender == 1) {
+	        debug_printf("in gender1\n");
+        switch (state) {
+        case PLAYER_STATE_WALKING:
+            return SPRITE_HERO;
+        case PLAYER_STATE_CYCLING:
+            return SPRITE_CYCLEHERO;
+        case PLAYER_STATE_SURFING:
+            return SPRITE_SWIMHERO;
+        case PLAYER_STATE_UNK_SP:
+            return SPRITE_SPHERO;
+        case PLAYER_STATE_UNK_WATER:
+            return SPRITE_WATERHERO;
+        case PLAYER_STATE_FISHING:
+            return SPRITE_FISHINGHERO;
+        case PLAYER_STATE_UNK_POKE:
+            return SPRITE_POKEHERO;
+        case PLAYER_STATE_SAVING:
+            return SPRITE_SAVEHERO;
+        case PLAYER_STATE_HEAL:
+            return SPRITE_BANZAIHERO;
+        case PLAYER_STATE_LADDER:
+            return SPRITE_LADDERHERO;
+        case PLAYER_STATE_ROCKET:
+            return SPRITE_RHERO;
+        case PLAYER_STATE_ROCKET_HEAL:
+            return SPRITE_RBANZAIHERO; case PLAYER_STATE_POKEATHLON:
+            return SPRITE_PKTHHERO;
+        case PLAYER_STATE_APRICORN_SHAKE:
+            return SPRITE_SHAKEHERO;
+        case PLAYER_STATE_ROCKET_SAVING:
+            return SPRITE_SAVERHERO;
+        }
+	} else if (gender == 2) {
+	        debug_printf("in gender2\n");
+        switch (state) {
+        case PLAYER_STATE_WALKING:
+            return SPRITE_HERO;
+        case PLAYER_STATE_CYCLING:
+            return SPRITE_CYCLEHERO;
+        case PLAYER_STATE_SURFING:
+            return SPRITE_SWIMHERO;
+        case PLAYER_STATE_UNK_SP:
+            return SPRITE_SPHERO;
+        case PLAYER_STATE_UNK_WATER:
+            return SPRITE_WATERHERO;
+        case PLAYER_STATE_FISHING:
+            return SPRITE_FISHINGHERO;
+        case PLAYER_STATE_UNK_POKE:
+            return SPRITE_POKEHERO;
+        case PLAYER_STATE_SAVING:
+            return SPRITE_SAVEHERO;
+        case PLAYER_STATE_HEAL:
+            return SPRITE_BANZAIHERO;
+        case PLAYER_STATE_LADDER:
+            return SPRITE_LADDERHERO;
+        case PLAYER_STATE_ROCKET:
+            return SPRITE_RHERO;
+        case PLAYER_STATE_ROCKET_HEAL:
+            return SPRITE_RBANZAIHERO; case PLAYER_STATE_POKEATHLON:
+            return SPRITE_PKTHHERO;
+        case PLAYER_STATE_APRICORN_SHAKE:
+            return SPRITE_SHAKEHERO;
+        case PLAYER_STATE_ROCKET_SAVING:
+            return SPRITE_SAVERHERO;
+        }
+    }
+    GF_ASSERT(FALSE);
+    return 0;
 }

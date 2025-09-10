@@ -356,6 +356,8 @@ u32 LONG_CALL Pokedex_CountDexOwned(void *dexSaveData);
 u32 LONG_CALL Pokedex_CountJohtoDexOwned(void *dexSaveData);
 HallOfFame * LONG_CALL LoadHallOfFame(void *saveData, u32 heapId, int *ret_p);
 void LONG_CALL Save_HOF_RecordParty(HallOfFame *hof, struct Party *party, struct RTCDate *date);
+void LONG_CALL PlayerProfile_SetTrainerGender (void *profile, int gender);
+u32 LONG_CALL PlayerAvatar_GetSpriteByStateAndGender(u32 state, int gender);
 
 // can't include scripts.h directly
 typedef struct FieldSystem FieldSystem;
