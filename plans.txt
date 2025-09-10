@@ -2,40 +2,334 @@ eusine claim passerby boy and stat trainers trainerids, meaning battles x 3
 eusine mega dragonite?
 EUSINE TEXT FROM SUICUNE HUNT ADAPTED TO BE ABOUT BATTLES
 
-
-LANCE TO HOLD OFF PROTON AT MAHOGANY TOWN SO KRIS AND PLAYER CAN GO DOWN TOGETHER
-KRIS MOTIVATION TO DESTROY TEAM ROCKET TO PROTECT THEIR GRANDPA KURT
-
-lyra marill, ethan phanpy, kris misdreavus
 kris at union cave exit DONE
 eusine at cianwood, route 14 and one other place
-    
-	PIDGEOT
-	abilities ABILITY_KEEN_EYE, ABILITY_GALE_WINGS
+MAKE EUSINE LESS op IN FIRST BATTLE (burned tower)
+Move rival from burned tower to pre-mahogany
 
-
-add zubat behind rival 
-dratini behind eusine
-falkner pigeotto
-bugsy scyther
-morty gengar
-whitney miltank
-jasmine steelix
-chuck poliwrath
-pryce mr rime
-clair kingdra
+kris story is defeating rocket to PROTECT/avenge kurt, ethan's story is racing around johto to learn to be a guide gent, lyra's story is learning about pokemon to become new professor
 
 kris sprite gotta move across to the right a lil
+LANCE TO HOLD OFF PROTON AT MAHOGANY TOWN SO KRIS AND PLAYER CAN GO DOWN TOGETHER
 kris fights alongside instead of Lance, using his slot
 
-LUCIAN NOW A FAIRY TYPE SPECIALIST
+make skarmory falkner-rematch ace, move salamence somewhere else
+reorganise misty AND erika to have starmie and victreebel as megas
+REJIG castform with understanding that kanto rematches will be identical
+redistribute BACKUP movesets to other people
+Kanto rematches to be identical to first fights but at consistent level and infinitely rematchable. 
+HAVE A think about who gets the zstones vs latimegas in aquamagma
+Clear Bell, Tidal Bell given out somehow post E4
 
-MAKE EUSINE LESS op IN FIRST BATTLE
+To be done (A=Now possible, B= Possible with work, C= Possible with further investigation/work ++, D= Delayed until PR, E=Not yet possible):
+- EVENT SCRIPTING D (SCRIPTS IN HG-E)
+- ENCOUNTER FINALISING B
+- PORTING OLD DATA B
+- VS SPRITES D (VS SPRITES IN HG-E)
+- FIXING CURRENT SPRITES B
+- Get frostbite interim working B
+- FINISHING FROSTBITE PR C 
+- MODEL FOR INTRO C 
+- TITLE FOR INTRO C
+- backsprite change for kris C 
+- GENDER NEUTRAL CHARACTER SELECT C 
+- GENDER NEUTRAL CHARACTER SPRITING B
+- GENDER NEUTRAL CHARACTER SWAP HOOKING C
+- ROCKET MAHOGANY MESS REORGANISING B
+- CELEBI EVENT REORGANISING B
+- EUSINE BATTLING REORGANISING B
+- NEW PC STRUCTURE RELOCAITNG B 
+- PC GAMERS like celio and sutff REORGANISING B
+- PHONEBOOK OVERHAUL B
 
-PROTON KING 1
-liza king 0
-will rematch bro 2
-tate bro 1
-will bro 2
+        case PLAYER_STATE_WALKING:
+            return SPRITE_HEROINE;
+        case PLAYER_STATE_CYCLING:
+            return SPRITE_CYCLEHEROINE;
+        case PLAYER_STATE_SURFING:
+            return SPRITE_SWIMHEROINE;
+        case PLAYER_STATE_UNK_SP:
+            return SPRITE_SPHEROINE;
+        case PLAYER_STATE_UNK_WATER:
+            return SPRITE_WATERHEROINE;
+        case PLAYER_STATE_FISHING:
+            return SPRITE_FISH_HEROINE;
+        case PLAYER_STATE_UNK_POKE:
+            return SPRITE_POKEHEROINE;
+        case PLAYER_STATE_SAVING:
+            return SPRITE_SAVEHEROINE;
+        case PLAYER_STATE_HEAL:
+            return SPRITE_BANZAIHEROINE;
+        case PLAYER_STATE_LADDER:
+            return SPRITE_LADDERHEROINE;
+        case PLAYER_STATE_ROCKET:
+            return SPRITE_RHEROINE;
+        case PLAYER_STATE_ROCKET_HEAL:
+            return SPRITE_RBANZAIINE;
+        case PLAYER_STATE_POKEATHLON:
+            return SPRITE_PKTHHEROINE;
+        case PLAYER_STATE_APRICORN_SHAKE:
+            return SPRITE_SHAKEHEROINE;
+        case PLAYER_STATE_ROCKET_SAVING:
+            return SPRITE_SAVERHEROINE;
+        }
 
-Revert pidgey abilities. 
+
+
+RecordPokegearNumber 4
+	TextPlayerName 0
+message 26
+	PlaySound 1206
+	WaitSound 
+	'
+	
+	
+	\v0103ぁ\x0000\x0000 registered Ethan\nin the Pokégear!\r
+
+zcrystals hoenn
+plates sinnoh
+gems kanto
+
+PARTNER OWS
+flyinggem falkner pigeotto
+buggem bugsy scyther
+ghostgem morty gengar
+normalgem whitney miltank
+steelgem jasmine skarmory
+fightinggem chuck poliwrath
+icegem pryce mr rime
+fairygem clair kingdra
+grassgem erika bellossom
+groundgem blue gyara
+rockgem brock aerodactyl
+watergem misty corsola
+poisongem janine venomoth
+electricgem surge RAIchu
+psychicgem sabrina butterfree
+firegem blaine rapidash
+will xatu
+bruno hitmontop
+koga muk
+karen vileplume
+lance gyarados
+
+red pikachu
+Leaf fearow NO 
+green wiggly NO
+yellow raticate NO
+zgrass brendan ninjask
+zbug may beautifly
+zfairy wallace luvdisc
+lucas bibarel
+dawn pachirisu
+barry munchlax NO
+wally masquerain 
+
+giovanni OG
+giovanni rainbow 
+archer cubone
+ariana arbok
+proton mankey
+petrel gweezing
+maxie sharpedo
+archie camerupt
+shelly lumineon
+zpoison courtney ninetales
+tabitha clodsire
+zground matt machamp
+cyrus honchcrow NO 
+charon rotom NO
+saturn toxicroak NO
+mars purugly NO
+jupiter skuntank NO
+
+zwater juan crawdaunt NO
+zdark sidney mighteyena
+zice glacia walrein
+zghost phoebe banette
+zdragon drake salamence
+zsteel steven aggron
+zfire flannery torkoal
+znormal norman slaking
+zrock roxanne probopass
+zelectric wattson plusle + minun
+zpsychic tate solrock
+zpsychic liza lunatone
+zfighting brawly hariyama
+zflying winona noctowl
+
+noland flygon NO
+greta shedinja NO
+tucker dustox NO
+lucy seviper NO
+spenser lapras NO
+brandon regigigas NO
+anabel weavile NO
+
+normalplate palmer bloodmoon NO
+poisonplate thorton carnivine NO
+dragonplate dahlia alolachu NO
+darkplate darach obstagoon NO
+psychicplate caitlin vespiquen NO
+flyingplate ARGENTA swellow NO
+
+rockplate roark rampardos
+fightingplate maylene breloom
+steelplate byron bastiodon
+iceplate candice abomasnow
+electricplate volkner luxray
+waterplate wake floatzel
+ghostplate fantina drifblim
+grassplate gardenia roserade
+fireplate flint houndoom
+bugplate aaron drapion
+fairyplate lucian mr mime
+grounplate bertha hippowdon
+legendsplate cynthia spiritomb
+
+
+
+kevin with delcatty, NO
+get prof elms assistant to always be lyra with marill, catching tutorial, daycare, fashion case NO
+ethan as the shoes guy with phanpy, seen again running through johto, vs recorder NO
+darkgem add zubat behind rival 
+kris as kurt grandchild with misdreavus NO
+dragongem dratini behind eusine NO
+
+VSSPRITES: hoenns in ORAS, Caitlin in GenV, ANABEL/CYRUS in GENVII. Unsprited = Kevin, Kris, Eusine, Barry, Ethan, Lyra, Juan, Cyrus, Jupiter, Mars, Saturn, Charon, Yellow, Green, Leaf
+
+spare POKES
+
+        // mon 2
+        ivs 0
+        abilityslot 0
+        level 100
+        pokemon SPECIES_AMBIPOM
+		item ITEM_LOADED_DICE
+        move MOVE_TAIL_SLAP
+        move MOVE_FURY_ATTACK
+        move MOVE_COMET_PUNCH
+        move MOVE_KNOCK_OFF
+		ability ABILITY_TECHNICIAN
+		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
+		setevs 0, 0, 0, 0, 0, 0
+		nature NATURE_ADAMANT
+		shinylock 0
+        ballseal 0
+
+        // mon 4
+        ivs 0
+        abilityslot 0
+        level 80
+        pokemon SPECIES_SLOWKING
+		item ITEM_RED_CARD
+        move MOVE_FUTURE_SIGHT
+        move MOVE_TELEPORT
+        move MOVE_WATER_PULSE
+        move MOVE_YAWN
+		ability ABILITY_REGENERATOR
+		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
+		setevs 0, 0, 0, 0, 0, 0
+		nature NATURE_ADAMANT
+		shinylock 0
+        ballseal 0
+		
+		// mon 0
+        ivs 0
+        abilityslot 0
+        level 80
+        pokemon SPECIES_SHUCKLE
+		item ITEM_KEE_BERRY
+        move MOVE_STICKY_WEB
+        move MOVE_POWER_SPLIT
+        move MOVE_TOXIC
+        move MOVE_BODY_PRESS
+		ability ABILITY_STURDY
+		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
+		setevs 0, 0, 0, 0, 0, 0
+		nature NATURE_ADAMANT
+		shinylock 0
+        ballseal 0
+
+        // mon 1
+        ivs 0
+        abilityslot 0
+        level 80
+        pokemon SPECIES_WOBBUFFET
+		item ITEM_FOCUS_BAND
+        move MOVE_DESTINY_BOND
+        move MOVE_COUNTER
+        move MOVE_MIRROR_COAT
+        move MOVE_REVERSAL
+		ability ABILITY_SHADOW_TAG
+		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
+		setevs 0, 0, 0, 0, 0, 0
+		nature NATURE_ADAMANT
+		shinylock 0
+        ballseal 0
+
+        // mon 2
+        ivs 0
+        abilityslot 0
+        level 80
+        pokemon SPECIES_HITMONTOP
+		item ITEM_LIFE_ORB
+        move MOVE_ROLLING_KICK
+        move MOVE_TRIPLE_AXEL
+        move MOVE_FAKE_OUT
+        move MOVE_KNOCK_OFF
+		ability ABILITY_TECHNICIAN
+		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
+		setevs 0, 0, 0, 0, 0, 0
+		nature NATURE_ADAMANT
+		shinylock 0
+        ballseal 0
+		        
+        // mon 4
+        ivs 0
+        abilityslot 0
+        level 80
+        pokemon SPECIES_LUCARIO
+		item ITEM_LUCARIONITE
+        move MOVE_AURA_SPHERE
+        move MOVE_VACUUM_WAVE
+        move MOVE_FLASH_CANNON
+        move MOVE_NASTY_PLOT
+		ability ABILITY_STEADFAST
+		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
+		setevs 0, 0, 0, 0, 0, 0
+		nature NATURE_ADAMANT
+		shinylock 0
+        ballseal 0
+		
+		THINGS TO GRAB FROM HZLA 101stCentury
+
+- Makefile Jsonproc addition
+- narcs.mk addition
+- gitignore jsonproc addition
+- zone-event.json
+- STD Scripts including hiddenitems and grounditems
+- OWSprites
+- "SPAWNS" (flylocations/pokecentres)
+- Movements
+- MAps
+- Mapsec (Met locations)
+- Toolssource/jsonproc
+- VARS names
+
+Not including
+- Scripts seqs (Script files)
+- Zone events (event files)
+- Rankings
+- Textfiles
+- Gamestats
+- Events.inc (special events)
+- Scriptmacros (names for script commands and movetutors)
+- Flags (names for flags)
+
+Pre-victory road, battle kimonos then silver wing which in combo with rainbow summons celebi to force the past event. Kris there, takes wings to kurt afterward to become GS ball. When the kimono girls witness your return, they let you know you can fight the league. 
+At HOF given megaring or whatever by Rowan, certified by Oak as Champion meaning you can use bring external pokemon into johto. 
+Birch (after discussing with professor ivy from sevii) gives regional berries
+SECOND SET OF KIMONO GIRLS AS OBSTACLE TO GET TO ERIKA
+After red beaten, you get red shard. then rainbow giovanni arrives through ultra-wormhole using mewtwo's power and bringing paradoxes. Bill arrives and tells you that 4 shards of the pallet star piece needed for machine to function  
+Star piece is required by celio to open wormhole at oak's lab. Requires RBYG shards from red, leaf(blue's shard), yellow, green. Once operational gym leaders of hoenn enter and disperse to tame paradox pokemon under wallace's instruction. Steven gives Z-ring and tells you to find and battle hoenn leaders.  
