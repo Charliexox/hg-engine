@@ -374,14 +374,16 @@
 #define MOVE_EFFECT_HIGH_CRITICAL_RAISE_SPEED_HIT           368
 #define MOVE_EFFECT_MORTAL_SPIN                             369
 #define MOVE_EFFECT_TIDY_UP                                 370
-#define MOVE_EFFECT_FROSTBITE_HIT                           371
-#define MOVE_EFFECT_FROSTBITE_BLIZZARD                      372
-#define MOVE_EFFECT_FLINCH_FROSTBITE_HIT                    373
+#define MOVE_EFFECT_PROTECT_USER_SIDE                       371
 
-#define MAX_BASE_MOVE_EFFECT_NUM                            370
+#define MAX_BASE_MOVE_EFFECT_NUM                            371
 
 // define your custom move effects below like this
 // #define MOVE_EFFECT_CUSTOM_1 (MAX_BASE_MOVE_EFFECT_NUM + 1)
+#define MOVE_EFFECT_FROSTBITE_HIT                           (MAX_BASE_MOVE_EFFECT_NUM + 1)
+#define MOVE_EFFECT_FROSTBITE_BLIZZARD                      (MAX_BASE_MOVE_EFFECT_NUM + 2)
+#define MOVE_EFFECT_FLINCH_FROSTBITE_HIT                    (MAX_BASE_MOVE_EFFECT_NUM + 3)
+
 
 
 
