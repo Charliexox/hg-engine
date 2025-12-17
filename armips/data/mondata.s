@@ -19850,7 +19850,7 @@ mondata SPECIES_REGIELEKI, "Regieleki"
     basefriendship 35
     growthrate GROWTH_SLOW
     egggroups EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED
-    abilities ABILITY_TRANSISTOR, ABILITY_NONE
+    abilities ABILITY_CLEAR_BODY, ABILITY_TRANSISTOR
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
     mondexentry SPECIES_REGIELEKI, "Its entire body is made of an organ\nthat generates electricity. It is capable of\ngenerating a region’s worth of electricity."
@@ -19871,7 +19871,7 @@ mondata SPECIES_REGIDRAGO, "Regidrago"
     basefriendship 35
     growthrate GROWTH_SLOW
     egggroups EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED
-    abilities ABILITY_DRAGONS_MAW, ABILITY_NONE
+    abilities ABILITY_CLEAR_BODY, ABILITY_DRAGONS_MAW
     runchance 0
     colorflip BODY_COLOR_GREEN, 0
     mondexentry SPECIES_REGIDRAGO, "Its body is composed of crystallized\ndragon energy. It is said to contain the\npower of every Dragon Pokémon."
