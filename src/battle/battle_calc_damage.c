@@ -216,7 +216,7 @@ void CalcDamageOverall(void *bw, struct BattleStruct *sp) {
                     if (moveno == MOVE_HYDRO_STEAM && GetBattleMonItem(sp, attacker) != ITEM_UTILITY_UMBRELLA) {
                         damage = QMul_RoundDown(damage, UQ412__1_5);
                     } else {
-                        damage = QMul_RoundDown(damage, UQ412__0_5);
+                        damage = QMul_RoundDown(damage, UQ412__1_0);
                     }
                     break;
             }
@@ -383,7 +383,7 @@ void CalcDamageOverall(void *bw, struct BattleStruct *sp) {
     debug_printf("[CalcBaseDamage] damage: %d\n", damage);
 #endif
 
-    // 6.8 Burn Modifier
+    // 6.8 Burn & Frostbite Modifier
 
     if (movesplit == SPLIT_PHYSICAL) {
         // burns halve physical damage.  this is ignored by guts and facade (as of gen 6)
@@ -397,10 +397,21 @@ void CalcDamageOverall(void *bw, struct BattleStruct *sp) {
 #endif  // DEBUG_DAMAGE_ROLLS
         }
     }
-
+    if (movesplit == SPLIT_SPECIAL) {
+        // frostbite halves special damage.  this is ignored by guts and facade (as of gen 6)
+        if ((sp->battlemon[sp->attack_client].condition & STATUS_FROSTBITE) && (sp->battlemon[sp->attack_client].ability != ABILITY_GUTS) && (sp->current_move_index != MOVE_FACADE)) {
+            damage = QMul_RoundDown(damage, UQ412__0_5);
+#ifdef DEBUG_DAMAGE_ROLLS
+            for (int u = 0; u < 16; u++)
+            {
+                predamage[u] = QMul_RoundDown(predamage[u], UQ412__0_5);
+            }
+#endif  // DEBUG_DAMAGE_ROLLS
+        }
+    }
 #ifdef DEBUG_DAMAGE_CALC
     debug_printf("\n=================\n");
-    debug_printf("[CalcBaseDamage] 6.8 Burn Modifier\n");
+    debug_printf("[CalcBaseDamage] 6.8 Burn & Frostbite Modifier\n");
     debug_printf("[CalcBaseDamage] damage: %d\n", damage);
 #endif
 
@@ -597,10 +608,10 @@ void CalcDamageOverall(void *bw, struct BattleStruct *sp) {
 #endif
         }
 
-        // 6.9.15 Punk Rock
+        // 6.9.15 Cacophony
         // https://www.smogon.com/forums/threads/sword-shield-battle-mechanics-research.3655528/post-8291673
         if ((sp->rawSpeedNonRNGClientOrder[i] == defender)
-        && (GetBattlerAbility(sp, defender) == ABILITY_PUNK_ROCK)
+        && (GetBattlerAbility(sp, defender) == ABILITY_CACOPHONY)
         && IsMoveSoundBased(moveno)) {
             finalModifier = QMul_RoundUp(finalModifier, UQ412__0_5);
 #ifdef DEBUG_DAMAGE_CALC

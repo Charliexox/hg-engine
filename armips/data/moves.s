@@ -1834,14 +1834,14 @@ movedata MOVE_LIGHT_SCREEN, "Light Screen"
     movedescription MOVE_LIGHT_SCREEN, "A wondrous wall of\nlight is put up to\nsuppress damage from\nspecial attacks for\nfive turns."
 
 movedata MOVE_HAZE, "Haze"
-    battleeffect MOVE_EFFECT_RESET_STAT_CHANGES
-    pss SPLIT_STATUS
-    basepower 0
+    battleeffect MOVE_EFFECT_FROSTBITE_HIT
+    pss SPLIT_SPECIAL
+    basepower 10
     type TYPE_ICE
-    accuracy 0
+    accuracy 100	
     pp 30
-    effectchance 0
-    target RANGE_FIELD
+    effectchance 100
+    target RANGE_SINGLE_TARGET
     priority 0
     flags 0
     appeal 0x0D
