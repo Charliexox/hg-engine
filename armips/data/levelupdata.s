@@ -2817,6 +2817,7 @@ levelup SPECIES_GOLDEEN
 	learnset MOVE_FLIP_TURN, 26
 	learnset MOVE_DRILL_PECK, 27
 	learnset MOVE_DRILL_RUN, 29
+	learnset MOVE_ZING_ZAP, 31
     learnset MOVE_WATERFALL, 33
 	learnset MOVE_FIERY_DANCE, 37
     learnset MOVE_SOAK, 40
@@ -2850,6 +2851,7 @@ levelup SPECIES_SEAKING
 	learnset MOVE_DRILL_PECK, 27
 	learnset MOVE_FIRE_FANG, 28
 	learnset MOVE_DRILL_RUN, 29
+	learnset MOVE_ZING_ZAP, 31
     learnset MOVE_WATERFALL, 34
 	learnset MOVE_FIERY_DANCE, 38
 	learnset MOVE_RETURN, 40
@@ -4803,8 +4805,8 @@ levelup SPECIES_MURKROW
     learnset MOVE_PURSUIT, 5
     learnset MOVE_HAZE, 11
     learnset MOVE_WING_ATTACK, 15
-	learnset MOVE_PLUCK, 15
     learnset MOVE_NIGHT_SHADE, 21
+	learnset MOVE_PLUCK, 23
     learnset MOVE_ASSURANCE, 25
     learnset MOVE_TAUNT, 31
     learnset MOVE_FEINT_ATTACK, 35
