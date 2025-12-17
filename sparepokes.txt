@@ -1,0 +1,89 @@
+
+spare POKES
+
+        // mon 2
+        ivs 0
+        abilityslot 0
+        level 100
+        pokemon SPECIES_AMBIPOM
+		item ITEM_LOADED_DICE
+        move MOVE_TAIL_SLAP
+        move MOVE_FURY_ATTACK
+        move MOVE_COMET_PUNCH
+        move MOVE_KNOCK_OFF
+		ability ABILITY_TECHNICIAN
+		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
+		setevs 0, 0, 0, 0, 0, 0
+		nature NATURE_ADAMANT
+		shinylock 0
+        ballseal 0
+
+        // mon 4
+        ivs 0
+        abilityslot 0
+        level 80
+        pokemon SPECIES_SLOWKING
+		item ITEM_RED_CARD
+        move MOVE_FUTURE_SIGHT
+        move MOVE_TELEPORT
+        move MOVE_WATER_PULSE
+        move MOVE_YAWN
+		ability ABILITY_REGENERATOR
+		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
+		setevs 0, 0, 0, 0, 0, 0
+		nature NATURE_ADAMANT
+		shinylock 0
+        ballseal 0
+		
+		// mon 0
+        ivs 0
+        abilityslot 0
+        level 80
+        pokemon SPECIES_SHUCKLE
+		item ITEM_KEE_BERRY
+        move MOVE_STICKY_WEB
+        move MOVE_POWER_SPLIT
+        move MOVE_TOXIC
+        move MOVE_BODY_PRESS
+		ability ABILITY_STURDY
+		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
+		setevs 0, 0, 0, 0, 0, 0
+		nature NATURE_ADAMANT
+		shinylock 0
+        ballseal 0
+
+        // mon 1
+        ivs 0
+        abilityslot 0
+        level 80
+        pokemon SPECIES_WOBBUFFET
+		item ITEM_FOCUS_BAND
+        move MOVE_DESTINY_BOND
+        move MOVE_COUNTER
+        move MOVE_MIRROR_COAT
+        move MOVE_REVERSAL
+		ability ABILITY_SHADOW_TAG
+		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
+		setevs 0, 0, 0, 0, 0, 0
+		nature NATURE_ADAMANT
+		shinylock 0
+        ballseal 0
+
+        // mon 2
+        ivs 0
+        abilityslot 0
+        level 80
+        pokemon SPECIES_HITMONTOP
+		item ITEM_LIFE_ORB
+        move MOVE_ROLLING_KICK
+        move MOVE_TRIPLE_AXEL
+        move MOVE_FAKE_OUT
+        move MOVE_KNOCK_OFF
+		ability ABILITY_TECHNICIAN
+		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
+		setevs 0, 0, 0, 0, 0, 0
+		nature NATURE_ADAMANT
+		shinylock 0
+        ballseal 0
+		
+=============================
