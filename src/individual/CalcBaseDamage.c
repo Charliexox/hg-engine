@@ -678,7 +678,7 @@ int UNUSED CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 sid
             break;
         case MOVE_EXPANDING_FORCE:
             // https://www.smogon.com/forums/threads/sword-shield-battle-mechanics-research.3655528/post-8520635
-            if ((sp->terrainOverlay.numberOfTurnsLeft > 0) && (sp->terrainOverlay.type == MISTY_TERRAIN)) {
+            if ((sp->terrainOverlay.numberOfTurnsLeft > 0) && (sp->terrainOverlay.type == PSYCHIC_TERRAIN)) {
                 basePowerModifier = QMul_RoundUp(basePowerModifier, UQ412__1_5);
             }
             break;
@@ -1634,6 +1634,13 @@ int UNUSED CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 sid
             if ((MoldBreakerAbilityCheck(sp, attacker, defender, ABILITY_GRASS_PELT) == TRUE)
             && (sp->terrainOverlay.type == GRASSY_TERRAIN && sp->terrainOverlay.numberOfTurnsLeft > 0)
             && (movesplit == SPLIT_PHYSICAL)) {
+                defenseModifier = QMul_RoundUp(defenseModifier, UQ412__1_5);
+            }
+
+            // handle Grass Pelt
+            if ((MoldBreakerAbilityCheck(sp, attacker, defender, ABILITY_GRASS_PELT) == TRUE)
+            && (sp->terrainOverlay.type == GRASSY_TERRAIN && sp->terrainOverlay.numberOfTurnsLeft > 0)
+            && (movesplit == SPLIT_SPECIAL)) {
                 defenseModifier = QMul_RoundUp(defenseModifier, UQ412__1_5);
             }
 
