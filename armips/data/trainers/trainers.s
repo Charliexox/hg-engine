@@ -876,6 +876,7 @@ trainerdata 20, "Falkner"
 		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
         setevs 0, 0, 0, 0, 0, 0
 		nature NATURE_ADAMANT
+		shinylock 0
         ballseal 0
     endparty
 
@@ -7148,7 +7149,7 @@ trainerdata 231, "Edward"
         ballseal 0
     endparty
 
-trainerdata 232, "Vincent" //doublebro
+trainerdata 232, "Vincent"
     trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass TRAINERCLASS_GUITARIST
     nummons 4
@@ -7157,7 +7158,7 @@ trainerdata 232, "Vincent" //doublebro
     item ITEM_NONE
     item ITEM_NONE
     aiflags F_PRIORITIZE_SUPER_EFFECTIVE | 0
-    battletype DOUBLE_BATTLE
+    battletype NO_PARTNER_DOUBLE_BATTLE
     endentry
 
     party 232
@@ -9427,9 +9428,9 @@ trainerdata 264, "Silver" //rival5 chikorita
     endparty
 
 trainerdata 265, "Eusine" // CianwoodCynda
-    trainermontype TRAINER_DATA_TYPE_NOTHING
+	trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK
     trainerclass TRAINERCLASS_MYSTERIOUS
-    nummons 1
+    nummons 6
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -11365,7 +11366,7 @@ trainerdata 297, "Diana"
 trainerdata 298, "Briana"
     trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass TRAINERCLASS_SWIMMER_F
-    nummons 2
+    nummons 6
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -12892,7 +12893,7 @@ trainerdata 352, "Georgia"
         ballseal 0
     endparty
 
-trainerdata 353, "Grunt" //CERULEANGRUNT //doublebro
+trainerdata 353, "Grunt" //CERULEANGRUNT
 	trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK
     trainerclass TRAINERCLASS_TEAM_ROCKET
     nummons 6
@@ -12901,7 +12902,7 @@ trainerdata 353, "Grunt" //CERULEANGRUNT //doublebro
     item ITEM_NONE
     item ITEM_NONE
     aiflags F_PRIORITIZE_SUPER_EFFECTIVE | F_EVALUATE_ATTACKS | F_EXPERT_ATTACKS | 0
-    battletype SINGLE_BATTLE
+    battletype NO_PARTNER_DOUBLE_BATTLE
     endentry
 
     party 353
@@ -13789,8 +13790,8 @@ trainerdata 374, "Tyson"
         ballseal 0
     endparty
 
-trainerdata 377, "Parker"
-	trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK
+trainerdata 377, "Parker" //Mickey
+	trainermontype TRAINER_DATA_TYPE_NOTHING
     trainerclass TRAINERCLASS_SWIMMER_M
     nummons 6	
     item ITEM_NONE
@@ -14021,25 +14022,85 @@ trainerdata 383, "Peter"
     endparty
 
 trainerdata 384, "Daniel"
-    trainermontype TRAINER_DATA_TYPE_NOTHING
-    trainerclass TRAINERCLASS_HIKER
-    nummons 1
+	trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK    
+	trainerclass TRAINERCLASS_HIKER
+    nummons 4
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
     aiflags F_PRIORITIZE_SUPER_EFFECTIVE | F_PRIORITIZE_DAMAGE | 0
-    battletype SINGLE_BATTLE
+    battletype NO_PARTNER_DOUBLE_BATTLE
     endentry
 
     party 384
         // mon 0
         ivs 0
-        abilityslot 32
-        level 14
-        pokemon SPECIES_ONIX
+        abilityslot 0
+        level 10
+        monwithform SPECIES_SHAYMIN, 1
+		item ITEM_ASSAULT_VEST
+        move MOVE_PSYCHO_SHIFT
+        move MOVE_NONE
+        move MOVE_NONE
+        move MOVE_NONE
+		ability ABILITY_MAGMA_ARMOR
+		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
+		setevs 0, 0, 0, 0, 0, 0
+		nature NATURE_ADAMANT
+		shinylock 0
+        ballseal 0        
+		
+		// mon 1
+        ivs 0
+        abilityslot 0
+        level 10
+        pokemon SPECIES_SHARPEDO
+		item ITEM_SHARPEDONITE
+        move MOVE_PSYCHO_SHIFT
+        move MOVE_NONE
+        move MOVE_NONE
+        move MOVE_NONE
+		ability ABILITY_DRIZZLE
+		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
+		setevs 0, 0, 0, 0, 0, 0
+		nature NATURE_ADAMANT
+		shinylock 0
+        ballseal 0        
+		
+		// mon 2
+        ivs 0
+        abilityslot 0
+        level 10
+        pokemon SPECIES_SHARPEDO
+		item ITEM_LIFE_ORB
+        move MOVE_CRUNCH
+        move MOVE_LIQUIDATION
+        move MOVE_PSYCHIC_FANGS
+        move MOVE_SCREECH
+		ability ABILITY_HYDRATION
+		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
+		setevs 0, 0, 0, 0, 0, 0
+		nature NATURE_ADAMANT
+		shinylock 0
+        ballseal 0        
+		
+		// mon 3
+        ivs 0
+        abilityslot 0
+        level 10
+        pokemon SPECIES_WALREIN
+		item ITEM_LEFTOVERS
+        move MOVE_CRUNCH
+        move MOVE_LIQUIDATION
+        move MOVE_PSYCHIC_FANGS
+        move MOVE_SCREECH
+		ability ABILITY_ROUGH_SKIN
+		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
+		setevs 0, 0, 0, 0, 0, 0
+		nature NATURE_ADAMANT
+		shinylock 0
         ballseal 0
-    endparty
 
 trainerdata 385, "Dara & Dia"
     trainermontype TRAINER_DATA_TYPE_NOTHING
@@ -14994,7 +15055,7 @@ trainerdata 414, "Jose"
         ballseal 0
     endparty
 
-trainerdata 415, "Jared" //doublebro
+trainerdata 415, "Jared"
     trainermontype TRAINER_DATA_TYPE_MOVES
     trainerclass TRAINERCLASS_PSYCHIC_M
     nummons 6
@@ -15003,7 +15064,7 @@ trainerdata 415, "Jared" //doublebro
     item ITEM_NONE
     item ITEM_NONE
     aiflags F_PRIORITIZE_SUPER_EFFECTIVE | F_EVALUATE_ATTACKS | F_EXPERT_ATTACKS | 0
-    battletype DOUBLE_BATTLE
+    battletype NO_PARTNER_DOUBLE_BATTLE
     endentry
 
     party 415
@@ -15230,7 +15291,7 @@ trainerdata 418, "Bruno"
         level 53
         pokemon SPECIES_HERACROSS
         item ITEM_HERACRONITE
-        move MOVE_CLOSE_COMBAT
+        move MOVE_ARM_THRUST
         move MOVE_PIN_MISSILE
         move MOVE_BULLET_SEED
         move MOVE_ROCK_BLAST
@@ -17823,7 +17884,7 @@ trainerdata 491, "Silver" //rivalrematch totodile
 trainerdata 492, "Alex"
     trainermontype TRAINER_DATA_TYPE_NOTHING
     trainerclass TRAINERCLASS_POKEFAN_M
-    nummons 3
+    nummons 6
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -23645,7 +23706,7 @@ trainerdata 675, "Kris" //VsAriana originally Lance
     endparty
 
 trainerdata 676, "Parker"
-    trainermontype TRAINER_DATA_TYPE_MOVES
+    trainermontype TRAINER_DATA_TYPE_NOTHING
     trainerclass TRAINERCLASS_SAILOR
     nummons 6
     item ITEM_NONE
@@ -26504,7 +26565,7 @@ trainerdata 719, "Clair" //Rematch
     endparty
 
 trainerdata 720, "Brock" //Rematch
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
+	trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK
     trainerclass TRAINERCLASS_LEADER_BROCK
     nummons 6
     item ITEM_FULL_RESTORE
@@ -26620,7 +26681,7 @@ trainerdata 720, "Brock" //Rematch
     endparty
 
 trainerdata 721, "Misty" //Rematch
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
+	trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK
     trainerclass TRAINERCLASS_LEADER_MISTY
     nummons 6
     item ITEM_FULL_RESTORE
@@ -26736,7 +26797,7 @@ trainerdata 721, "Misty" //Rematch
     endparty
 
 trainerdata 722, "Lt. Surge" //Rematch
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
+	trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK
     trainerclass TRAINERCLASS_LEADER_LT_SURGE
     nummons 6
     item ITEM_FULL_RESTORE
@@ -26852,7 +26913,7 @@ trainerdata 722, "Lt. Surge" //Rematch
     endparty
 
 trainerdata 723, "Erika" //Rematch
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
+	trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK
     trainerclass TRAINERCLASS_LEADER_ERIKA
     nummons 6
     item ITEM_FULL_RESTORE
@@ -26968,7 +27029,7 @@ trainerdata 723, "Erika" //Rematch
     endparty
 
 trainerdata 724, "Janine" // Rematch
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
+	trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK
     trainerclass TRAINERCLASS_LEADER_JANINE
     nummons 6
     item ITEM_FULL_RESTORE
@@ -27084,7 +27145,7 @@ trainerdata 724, "Janine" // Rematch
     endparty
 
 trainerdata 725, "Sabrina" // Rematch
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
+	trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK
     trainerclass TRAINERCLASS_LEADER_SABRINA
     nummons 6
     item ITEM_FULL_RESTORE
@@ -27200,7 +27261,7 @@ trainerdata 725, "Sabrina" // Rematch
     endparty
 
 trainerdata 726, "Blaine" // Rematch
-    trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES
+	trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK
     trainerclass TRAINERCLASS_LEADER_BLAINE
     nummons 6
     item ITEM_FULL_RESTORE
@@ -28213,7 +28274,7 @@ trainerdata 63, "Giovanni" //Mickey //Rainbow
         level 56
         monwithform SPECIES_TAUROS, 1
         item ITEM_POMEG_BERRY
-        move MOVE_THRASH
+        move MOVE_BULLDOZE
         move MOVE_WORK_UP
         move MOVE_KNOCK_OFF
         move MOVE_DOUBLE_KICK
@@ -28863,7 +28924,7 @@ trainerdata 107, "May" //Mickey
 		item ITEM_POMEG_BERRY
         move MOVE_DAZZLING_GLEAM
         move MOVE_BUG_BUZZ
-        move MOVE_PSYCHIC
+        move MOVE_STORED_POWER
         move MOVE_QUIVER_DANCE
 		ability ABILITY_SIMPLE
 		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
@@ -28992,7 +29053,7 @@ trainerdata 138, "Wallace" //Mickey
 trainerdata 141, "Juan" //Mickey
 	trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK
     trainerclass TRAINERCLASS_LEADER_JUAN
-    nummons 3
+    nummons 6
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -29207,13 +29268,13 @@ trainerdata 165, "Flannery" //Mickey
         ivs 0
         abilityslot 0
         level 80
-        pokemon SPECIES_RAPIDASH
+        pokemon SPECIES_SEAKING
 		item ITEM_POMEG_BERRY
         move MOVE_FLARE_BLITZ
-        move MOVE_WILD_CHARGE
-        move MOVE_HIGH_HORSEPOWER
+        move MOVE_ZING_ZAP
+        move MOVE_WATERFALL
         move MOVE_WILL_O_WISP
-		ability ABILITY_FLAME_BODY
+		ability ABILITY_SWIFT_SWIM
 		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
 		setevs 0, 0, 0, 0, 0, 0
 		nature NATURE_ADAMANT
@@ -30682,7 +30743,7 @@ trainerdata 225, "Matt" //Mickey
         abilityslot 0
         level 80
         pokemon SPECIES_MACHAMP
-		item ITEM_POMEG_BERRY
+		item ITEM_SOFT_SAND
         move MOVE_CROSS_CHOP
         move MOVE_CURSE
         move MOVE_EARTHQUAKE
@@ -30815,7 +30876,7 @@ trainerdata 226, "Courtney" //Mickey
         abilityslot 0
         level 80
         pokemon SPECIES_GASTRODON
-		item ITEM_POMEG_BERRY
+		item ITEM_POISON_BARB
         move MOVE_CLEAR_SMOG
         move MOVE_SPIKES
         move MOVE_SLUDGE_BOMB
@@ -31030,7 +31091,7 @@ trainerdata 262, "Tabitha" //Mickey
         abilityslot 0
         level 80
         pokemon SPECIES_CLODSIRE
-		item ITEM_MENTAL_HERB
+		item ITEM_ROCKY_HELMET
         move MOVE_RECOVER
         move MOVE_STEALTH_ROCK
         move MOVE_SPIKES
@@ -31412,7 +31473,7 @@ trainerdata 295, "Lucy" //Mickey
         abilityslot 0
         level 80
         pokemon SPECIES_STEELIX
-		item ITEM_SOFT_SAND
+		item ITEM_MENTAL_HERB
         move MOVE_STEALTH_ROCK
         move MOVE_IRON_TAIL
         move MOVE_EARTHQUAKE
@@ -31626,13 +31687,13 @@ trainerdata 305, "Greta" //Mickey
         ivs 0
         abilityslot 0
         level 80
-        pokemon SPECIES_HERACROSS
-		item ITEM_HERACRONITE
-        move MOVE_BULLET_SEED
-        move MOVE_PIN_MISSILE
-        move MOVE_ROCK_BLAST
-        move MOVE_ARM_THRUST
-		ability ABILITY_MOXIE
+        pokemon SPECIES_LUCARIO
+		item ITEM_LUCARIONITE
+        move MOVE_AURA_SPHERE
+        move MOVE_VACUUM_WAVE
+        move MOVE_FLASH_CANNON
+        move MOVE_NASTY_PLOT
+		ability ABILITY_STEADFAST
 		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
 		setevs 0, 0, 0, 0, 0, 0
 		nature NATURE_ADAMANT
@@ -32588,7 +32649,7 @@ trainerdata 344, "Barry" //Mickey
 trainerdata 345, "Wake" //Mickey
 	trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK
     trainerclass TRAINERCLASS_LEADER_CRASHER_WAKE
-    nummons 1
+    nummons 6
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -32704,7 +32765,7 @@ trainerdata 345, "Wake" //Mickey
 trainerdata 347, "Maylene" //Mickey
 	trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK
     trainerclass TRAINERCLASS_LEADER_MAYLENE
-    nummons 1
+    nummons 6
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -32820,7 +32881,7 @@ trainerdata 347, "Maylene" //Mickey
 trainerdata 372, "Roark" //Mickey
 	trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK
     trainerclass TRAINERCLASS_LEADER_ROARK
-    nummons 3
+    nummons 6
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -32936,7 +32997,7 @@ trainerdata 372, "Roark" //Mickey
 trainerdata 375, "Candice" //Mickey
 	trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK
     trainerclass TRAINERCLASS_LEADER_CANDICE
-    nummons 3
+    nummons 6
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -33052,7 +33113,7 @@ trainerdata 375, "Candice" //Mickey
 trainerdata 376, "Fantina" //Mickey
 	trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK
     trainerclass TRAINERCLASS_LEADER_FANTINA
-    nummons 3
+    nummons 6
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -33168,7 +33229,7 @@ trainerdata 376, "Fantina" //Mickey
 trainerdata 394, "Volkner" //Mickey
 	trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK
     trainerclass TRAINERCLASS_LEADER_VOLKNER
-    nummons 3
+    nummons 6
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -33217,7 +33278,7 @@ trainerdata 394, "Volkner" //Mickey
         abilityslot 0
         level 80
         pokemon SPECIES_RAICHU
-		item ITEM_ELECTRIC_SEED
+		item ITEM_POMEG_BERRY
         move MOVE_NASTY_PLOT
         move MOVE_THUNDERBOLT
         move MOVE_BATON_PASS
@@ -33268,7 +33329,7 @@ trainerdata 394, "Volkner" //Mickey
         abilityslot 0
         level 80
         pokemon SPECIES_JOLTEON
-		item ITEM_MENTAL_HERB
+		item ITEM_ELECTRIC_SEED
         move MOVE_ELECTRO_BALL
         move MOVE_TRAILBLAZE
         move MOVE_THUNDER_WAVE
@@ -33284,7 +33345,7 @@ trainerdata 394, "Volkner" //Mickey
 trainerdata 442, "Byron" //Mickey
 	trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK
     trainerclass TRAINERCLASS_LEADER_BYRON
-    nummons 1
+    nummons 6
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -33400,7 +33461,7 @@ trainerdata 442, "Byron" //Mickey
 trainerdata 443, "Gardenia" //Mickey
 	trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK
     trainerclass TRAINERCLASS_LEADER_GARDENIA
-    nummons 1
+    nummons 6
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -33748,7 +33809,7 @@ trainerdata 474, "Lucian" //Mickey
 trainerdata 475, "Aaron" //Mickey
 	trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK
     trainerclass TRAINERCLASS_ELITE_FOUR_AARON
-    nummons 3
+    nummons 6
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -33864,7 +33925,7 @@ trainerdata 475, "Aaron" //Mickey
 trainerdata 476, "Flint" //Mickey
 	trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK
     trainerclass TRAINERCLASS_ELITE_FOUR_FLINT
-    nummons 3
+    nummons 6
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
@@ -34179,7 +34240,7 @@ trainerdata 504, "Looker" //Mickey
         abilityslot 0
         level 80
         pokemon SPECIES_TOXICROAK
-		item ITEM_PAYAPA_BERRY
+		item ITEM_POMEG_BERRY
         move MOVE_BULLET_PUNCH
         move MOVE_ENCORE
         move MOVE_GUNK_SHOT
@@ -35597,7 +35658,7 @@ trainerdata 707, "Palmer"
         abilityslot 0
         level 100
         pokemon SPECIES_DRAGONITE
-		item ITEM_LIFE_ORB
+		item ITEM_POMEG_BERRY
         move MOVE_DUAL_WINGBEAT
         move MOVE_EXTREME_SPEED
         move MOVE_SLAM
