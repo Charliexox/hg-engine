@@ -1,5 +1,3 @@
-
-
 To be done (A=Now possible, B= Possible with work, C= Possible with further investigation/work ++, D= Delayed until PR, E=Not yet possible):
 
 
@@ -56,6 +54,7 @@ To be done (A=Now possible, B= Possible with work, C= Possible with further inve
 reorganise misty AND erika to have starmie and victreebel as megas
 Mega raichu for surge
 Mega raichu for volkner
+MEGA CHIMECHO STEEL NORMAL
 make skarmory falkner-rematch ace, move salamence somewhere else
 figure out the whole raichu change thingoroonie
 add normalise, galvanize, drought, drizzle, misty surge, grassy surge, electric surge, psychic surge abilities to megas
@@ -269,112 +268,6 @@ Need: Kevin, Lyra, Kris, Ethan, Eusine,  Argenta, Caitlin, Darach, Dahlia, Thort
 
 ==========================
 
-spare POKES
-
-        // mon 2
-        ivs 0
-        abilityslot 0
-        level 100
-        pokemon SPECIES_AMBIPOM
-		item ITEM_LOADED_DICE
-        move MOVE_TAIL_SLAP
-        move MOVE_FURY_ATTACK
-        move MOVE_COMET_PUNCH
-        move MOVE_KNOCK_OFF
-		ability ABILITY_TECHNICIAN
-		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
-		setevs 0, 0, 0, 0, 0, 0
-		nature NATURE_ADAMANT
-		shinylock 0
-        ballseal 0
-
-        // mon 4
-        ivs 0
-        abilityslot 0
-        level 80
-        pokemon SPECIES_SLOWKING
-		item ITEM_RED_CARD
-        move MOVE_FUTURE_SIGHT
-        move MOVE_TELEPORT
-        move MOVE_WATER_PULSE
-        move MOVE_YAWN
-		ability ABILITY_REGENERATOR
-		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
-		setevs 0, 0, 0, 0, 0, 0
-		nature NATURE_ADAMANT
-		shinylock 0
-        ballseal 0
-		
-		// mon 0
-        ivs 0
-        abilityslot 0
-        level 80
-        pokemon SPECIES_SHUCKLE
-		item ITEM_KEE_BERRY
-        move MOVE_STICKY_WEB
-        move MOVE_POWER_SPLIT
-        move MOVE_TOXIC
-        move MOVE_BODY_PRESS
-		ability ABILITY_STURDY
-		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
-		setevs 0, 0, 0, 0, 0, 0
-		nature NATURE_ADAMANT
-		shinylock 0
-        ballseal 0
-
-        // mon 1
-        ivs 0
-        abilityslot 0
-        level 80
-        pokemon SPECIES_WOBBUFFET
-		item ITEM_FOCUS_BAND
-        move MOVE_DESTINY_BOND
-        move MOVE_COUNTER
-        move MOVE_MIRROR_COAT
-        move MOVE_REVERSAL
-		ability ABILITY_SHADOW_TAG
-		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
-		setevs 0, 0, 0, 0, 0, 0
-		nature NATURE_ADAMANT
-		shinylock 0
-        ballseal 0
-
-        // mon 2
-        ivs 0
-        abilityslot 0
-        level 80
-        pokemon SPECIES_HITMONTOP
-		item ITEM_LIFE_ORB
-        move MOVE_ROLLING_KICK
-        move MOVE_TRIPLE_AXEL
-        move MOVE_FAKE_OUT
-        move MOVE_KNOCK_OFF
-		ability ABILITY_TECHNICIAN
-		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
-		setevs 0, 0, 0, 0, 0, 0
-		nature NATURE_ADAMANT
-		shinylock 0
-        ballseal 0
-		        
-        // mon 4
-        ivs 0
-        abilityslot 0
-        level 80
-        pokemon SPECIES_LUCARIO
-		item ITEM_LUCARIONITE
-        move MOVE_AURA_SPHERE
-        move MOVE_VACUUM_WAVE
-        move MOVE_FLASH_CANNON
-        move MOVE_NASTY_PLOT
-		ability ABILITY_STEADFAST
-		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
-		setevs 0, 0, 0, 0, 0, 0
-		nature NATURE_ADAMANT
-		shinylock 0
-        ballseal 0
-		
-=============================
-
 		THINGS TO GRAB FROM HZLA 101stCentury
 
 - Makefile Jsonproc addition
@@ -409,7 +302,7 @@ Kris Kurt's grandchild (dark cave, celebi event, rocket HQ)
 Celebi event. Rainbow wing given by team rocket HQ. After battling kimonos, silver wing given. In combo with rainbow wing summons celebi to force the past event.
 Kris attends past event, and advises us to take the wings to kurt afterwards for him to make the GS ball. GS ball not ready until mythicals ready. 
 When the kimono girls witness your return from past event, they let you know you can fight the league. 
-Clear Bell and Tidal Bell given out post-E4 somehow
+Clear Bell given by kimonos round 2 and Tidal Bell given out by old man in pewter post-E4
 
 At HOF given megaring or whatever by Rowan, certified by Oak as Champion meaning you can use bring external pokemon into johto. 
 Birch (after discussing with professor ivy from sevii) gives regional berries
@@ -446,6 +339,26 @@ kris story is defeating rocket to PROTECT/avenge kurt, ethan's story is racing a
 kris at union cave exit DONE
 eusine at cianwood, route 14 and one other place
 
-figure out the whole lugia rainbow wing, clear bell, silver wing tidal bell, hooh kimono girl kurt celebi situation. Clear Bell, Tidal Bell given out somehow post E4)
-Rainbow wing given by rocket hq, silver wing given by kimono girls. Clear bell given by kimonos round 2 and tidal given by old man in pewter. 
-Rainbow wing and silver wing together waken celebi for pre-e4 event. After this can take to kurt and get gs ball made.
+
+HEATRAN MEGA TO PALMER, REMOVE DRAGONITE FROM HIM TO SOMEWHERE ELSE
+
+
+megameganium, feraligatr, DARKRAI
+
+zgrass wallace luvdisc SWAMPERT
+zwater juan crawdaunt SHARPEDO
+zdark sidney mighteyena ABSOL
+zice glacia walrein GLALIE
+zghost phoebe banette BANETTE
+zdragon drake salamence GARCHOMP
+zsteel steven aggron METAGROSS
+zfire flannery torkoal CAMERUPT
+znormal norman slaking CHIMECHO
+zrock roxanne probopass AGGRON
+zelectric wattson plusle + minun MANECTRIC
+zpsychic tate solrock GARD
+zpsychic liza lunatone GALLADE
+zfighting brawly hariyama STARAPTOR
+zflying winona noctowl SKARMORY
+
+

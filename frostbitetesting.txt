@@ -1,0 +1,45 @@
+
+
+Frostbite implemented with basic functionality. Those effects which are out of scope will not be worked on further. Currently in draft state while bugfixing in local repo.
+
+Implemented:
+
+cONFIRMED
+    Animation
+    Damage at turn end
+    Spatt drop
+    Shaymin forme change
+    Ice type & Magma armor immunity
+
+	
+tESTING
+	PSYCHO SHIFT
+	HYDRATION
+	
+lIKELY	
+	Config
+    Interactions with Guts, Quick Feet
+    Increased Capture Chance
+    Hydration fix
+    Psycho shift
+    Refresh and facade
+
+Functioning: Shed skin, healer, misty terrain, comatose, aromatherapy, heal bell, safeguard, substitute, flower veil, healing wish, natural cure, marvel scale, lunar dance
+
+Will need testing once battle can end without bug functional: pokemon centre healing, pc box healing, white out healing,
+Needs implementation: Synchronise, Leaf Guard, Shields Down, Take Heart
+
+Bugs:
+
+    Frostbite symbol removed on levelup, switch out
+    Game breaks on battle end if frostbite.
+    Shed skin/hydration (effect 190) and healer (effect 310) refer to frostbite as "frozen" in message, otherwise functional (message needs modernisation anyway)
+    Psycho shift (effect 118) functional but does not remove own status
+    Secret power unaccounted for (complicated logic with table)
+    Tri attack still freezing (complicated logic)
+    Shaymin losing status on switch
+    items not functioning (aspear, lum, ice heal, full restore, heal powder, sacred ash, full heal/local specialties [pewter crunchies, ragecandybar, lavacookie, old gateau, jubilife muffin, castelliacone, lumiose galette, big malasada, shalour sable])... See pokeheartgold src/battle/battle_system.c line 336 onwards
+
+Will need future testing once implemented: Purify, Gmax Sweetness, Lunar Blessing, Jungle Healing,
+
+Out of scope: Increased chance of application in snow, increased effect chance compared to freeze, increased move power compared to freeze, thawing, PLA move effects (bleakwind storm, bitter malice)
