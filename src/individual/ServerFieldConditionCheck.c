@@ -56,7 +56,8 @@ enum EndTurnResolutionOrder {
     ENDTURN_THIRD_EVENT_BLOCK,
     ENDTURN_RESOLVE_SWITCHES_4,
     ENDTURN_FORM_CHANGE,
-    ENDTURN_FORTH_EVENT_BLOCK,
+    ENDTURN_FOURTH_EVENT_BLOCK,
+    ENDTURN_ION_DELUGE_FADING,
     ENDTURN_END,
 };
 
@@ -96,10 +97,10 @@ enum ThirdEventBlockResolutionOrder {
     THIRD_EVENT_BLOCK_END,
 };
 
-enum ForthEventBlockResolutionOrder {
-    FORTH_EVENT_BLOCK_HUNGER_SWITCH,
-    FORTH_EVENT_BLOCK_EJECT_PACK,
-    FORTH_EVENT_BLOCK_END,
+enum FourthEventBlockResolutionOrder {
+    FOURTH_EVENT_BLOCK_HUNGER_SWITCH,
+    FOURTH_EVENT_BLOCK_EJECT_PACK,
+    FOURTH_EVENT_BLOCK_END,
 };
 
 void ServerFieldConditionCheck(void *bw, struct BattleStruct *sp) {
@@ -1470,8 +1471,23 @@ void ServerFieldConditionCheck(void *bw, struct BattleStruct *sp) {
                             sprintf(buf, "In SECOND_EVENT_BLOCK_AURORA_VEIL_DISSIPATING\n");
                             debugsyscall(buf);
 #endif
-                            if (FALSE) {
+
+                            if (sp->side_condition[side] & SIDE_STATUS_AURORA_VEIL) {
+#ifdef DEBUG_ENDTURN_LOGIC
+                                sprintf(buf, "\n\nAurora Veil side %d, turns left %d\n\n", side, sp->scw[side].auroraVeilCount);
+                                debugsyscall(buf);
+#endif
+                                if (--sp->scw[side].auroraVeilCount == 0) {
+                                    sp->side_condition[side] &= ~(SIDE_STATUS_AURORA_VEIL);
+                                    sp->waza_work = MOVE_AURORA_VEIL;
+                                    LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_WEAR_OFF);
+                                    sp->next_server_seq_no = sp->server_seq_no;
+                                    sp->server_seq_no = 22;
+                                    sp->battlerIdTemp = ST_ServerDir2ClientNoGet(bw, sp, side);
+                                    ret = 1;
+                                }
                             }
+                            
                             sp->endTurnEventBlockSequenceNumber++;
                             break;
                         }
@@ -1580,7 +1596,9 @@ void ServerFieldConditionCheck(void *bw, struct BattleStruct *sp) {
                 #endif
 
                 if (sp->terrainOverlay.type != TERRAIN_NONE) {
-                    sp->terrainOverlay.numberOfTurnsLeft--;
+                    if (sp->terrainOverlay.numberOfTurnsLeft < TERRAIN_TURNS_INFINITE) {
+                        sp->terrainOverlay.numberOfTurnsLeft--;
+                    }
                     if (sp->terrainOverlay.numberOfTurnsLeft <= 0) {
                         LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_HANDLE_TERRAIN_END);
                         sp->next_server_seq_no = sp->server_seq_no;
@@ -1841,9 +1859,9 @@ void ServerFieldConditionCheck(void *bw, struct BattleStruct *sp) {
                 sp->fcc_seq_no++;
                 break;
             }
-            case ENDTURN_FORTH_EVENT_BLOCK: {
+            case ENDTURN_FOURTH_EVENT_BLOCK: {
 #ifdef DEBUG_ENDTURN_LOGIC
-                sprintf(buf, "In ENDTURN_FORTH_EVENT_BLOCK\n");
+                sprintf(buf, "In ENDTURN_FOURTH_EVENT_BLOCK\n");
                 debugsyscall(buf);
 #endif
 
@@ -1856,9 +1874,9 @@ void ServerFieldConditionCheck(void *bw, struct BattleStruct *sp) {
 
                     switch (sp->endTurnEventBlockSequenceNumber) {
                         // TODO
-                        case FORTH_EVENT_BLOCK_HUNGER_SWITCH: {
+                        case FOURTH_EVENT_BLOCK_HUNGER_SWITCH: {
 #ifdef DEBUG_ENDTURN_LOGIC
-                            debug_printf("In FORTH_EVENT_BLOCK_HUNGER_SWITCH\n", NULL);
+                            debug_printf("In FOURTH_EVENT_BLOCK_HUNGER_SWITCH\n", NULL);
 #endif
 
                             sp->endTurnEventBlockSequenceNumber++;
@@ -1866,9 +1884,9 @@ void ServerFieldConditionCheck(void *bw, struct BattleStruct *sp) {
                             break;
                         }
                         // TODO
-                        case FORTH_EVENT_BLOCK_EJECT_PACK: {
+                        case FOURTH_EVENT_BLOCK_EJECT_PACK: {
 #ifdef DEBUG_ENDTURN_LOGIC
-                            debug_printf("In FORTH_EVENT_BLOCK_EJECT_PACK\n", NULL);
+                            debug_printf("In FOURTH_EVENT_BLOCK_EJECT_PACK\n", NULL);
 #endif
 
                             /*
@@ -1891,9 +1909,9 @@ void ServerFieldConditionCheck(void *bw, struct BattleStruct *sp) {
                             sp->endTurnEventBlockSequenceNumber++;
                             break;
                         }
-                        case FORTH_EVENT_BLOCK_END: {
+                        case FOURTH_EVENT_BLOCK_END: {
 #ifdef DEBUG_ENDTURN_LOGIC
-                            debug_printf("In FORTH_EVENT_BLOCK_END\n", NULL);
+                            debug_printf("In FOURTH_EVENT_BLOCK_END\n", NULL);
 #endif
                             sp->endTurnEventBlockSequenceNumber = 0;
                             sp->scc_work++;
@@ -1910,6 +1928,17 @@ void ServerFieldConditionCheck(void *bw, struct BattleStruct *sp) {
 
                 break;
             }
+            case ENDTURN_ION_DELUGE_FADING: { // Ion Deluge has no actual requirement for synchronicity as it lacks a message and all moves have been executed by this point. It's just here because it needs to be reset somewhere.
+                #ifdef DEBUG_ENDTURN_LOGIC
+                sprintf(buf, "In ENDTURN_ION_DELUGE_FADING\n");
+                debugsyscall(buf);
+                #endif
+                
+                sp->field_condition &= ~FIELD_STATUS_ION_DELUGE;
+
+                sp->fcc_seq_no++;
+                break;
+            }
             case ENDTURN_END: {
 #ifdef DEBUG_ENDTURN_LOGIC
                 sprintf(buf, "In ENDTURN_END\n");
@@ -1920,8 +1949,16 @@ void ServerFieldConditionCheck(void *bw, struct BattleStruct *sp) {
                     sp->battlemon[i].moveeffect.quickClawFlag = 0;
                     sp->battlemon[i].moveeffect.custapBerryFlag = 0;
                     sp->numberOfTurnsClientHasCurrentAbility[i] = sp->numberOfTurnsClientHasCurrentAbility[i] + 1;
+
+                    sp->moveConditionsFlags[i].endTurnMoveEffectActivated = 0;
+                    sp->moveConditionsFlags[i].moveFailureLastTurn = sp->moveConditionsFlags[i].moveFailureThisTurn;
+                    sp->moveConditionsFlags[i].moveFailureThisTurn = 0;
                 }
 
+                sp->playerSideHasFaintedTeammateLastTurn = sp->playerSideHasFaintedTeammateThisTurn;
+                sp->enemySideHasFaintedTeammateLastTurn = sp->enemySideHasFaintedTeammateThisTurn;
+                sp->playerSideHasFaintedTeammateThisTurn = 0;
+                sp->enemySideHasFaintedTeammateThisTurn = 0;
                 ret = 2;
                 break;
             }
