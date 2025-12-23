@@ -1,6 +1,6 @@
 To be done (A=Now possible, B= Possible with work, C= Possible with further investigation/work ++, D= Delayed until PR, E=Not yet possible):
 
-
+REIMPLEMENT BERRIES and other evo items
 	GRAPHICS
 - kris sprite gotta move across to the right a lil B
 - backsprite and player stuff change for kris C 

@@ -493,7 +493,7 @@ BOOL AbilityIsIgnoredByMoldBreaker (int ability) {
         case ABILITY_FLUFFY:
         case ABILITY_DAZZLING:
         case ABILITY_MIRROR_ARMOR:
-        case ABILITY_PUNK_ROCK:
+        case ABILITY_CACOPHONY:
         case ABILITY_ICE_SCALES:
         case ABILITY_ICE_FACE:
         case ABILITY_PASTEL_VEIL:
