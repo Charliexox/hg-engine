@@ -408,6 +408,9 @@ arm9 Save_CalcPCBoxModifiedFlags 02028C70 1
 arm9 PCModifiedFlags_CountModifiedBoxes 02028C9C 1
 arm9 PCModifiedFlags_GetIndexOfNthModifiedBox 02028CD4 2
 arm9 PlayerAvatar_GetSpriteByStateAndGender 0205C898 2
+arm9 ScrCmd_SetPlayerGender 080FB1A4 1
+arm9 PlayerProfile_SetTrainerGender 02028F90 1
+
 
 #pc box expansion
 arm9 PCStorage_sizeof 02073B20 0

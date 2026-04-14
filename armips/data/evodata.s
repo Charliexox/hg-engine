@@ -16400,7 +16400,7 @@ terminateevodata
 
 evodata SPECIES_TAUROS_COMBAT
     evolution EVO_NONE, 0, SPECIES_NONE
-    evolutionwithform EVO_STONE, ITEM_DAWN_STONE, SPECIES_TAUROS, 0
+    evolutionwithform EVO_STONE, ITEM_SHINY_STONE, SPECIES_TAUROS, 0
     evolutionwithform EVO_STONE, ITEM_FIRE_STONE, SPECIES_TAUROS, 2
     evolutionwithform EVO_STONE, ITEM_WATER_STONE, SPECIES_TAUROS, 3
 	evolutionwithform EVO_STONE, ITEM_DUSK_STONE, SPECIES_TAUROS, 1
@@ -16414,7 +16414,7 @@ terminateevodata
 evodata SPECIES_TAUROS_BLAZE
     evolution EVO_NONE, 0, SPECIES_NONE
     evolutionwithform EVO_STONE, ITEM_DUSK_STONE, SPECIES_TAUROS, 1
-    evolutionwithform EVO_STONE, ITEM_DAWN_STONE, SPECIES_TAUROS, 0
+    evolutionwithform EVO_STONE, ITEM_SHINY_STONE, SPECIES_TAUROS, 0
     evolutionwithform EVO_STONE, ITEM_WATER_STONE, SPECIES_TAUROS, 3
 	evolutionwithform EVO_STONE, ITEM_FIRE_STONE, SPECIES_TAUROS, 2
     evolution EVO_NONE, 0, SPECIES_NONE
@@ -16428,7 +16428,7 @@ evodata SPECIES_TAUROS_AQUA
     evolution EVO_NONE, 0, SPECIES_NONE
     evolutionwithform EVO_STONE, ITEM_DUSK_STONE, SPECIES_TAUROS, 1
     evolutionwithform EVO_STONE, ITEM_FIRE_STONE, SPECIES_TAUROS, 2
-    evolutionwithform EVO_STONE, ITEM_DAWN_STONE, SPECIES_TAUROS, 0
+    evolutionwithform EVO_STONE, ITEM_SHINY_STONE, SPECIES_TAUROS, 0
 	evolutionwithform EVO_STONE, ITEM_WATER_STONE, SPECIES_TAUROS, 3
     evolution EVO_NONE, 0, SPECIES_NONE
     evolution EVO_NONE, 0, SPECIES_NONE

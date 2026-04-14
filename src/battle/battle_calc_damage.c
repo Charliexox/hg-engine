@@ -473,7 +473,7 @@ void CalcDamageOverall(void *bw, struct BattleStruct *sp) {
 
     if (movesplit == SPLIT_PHYSICAL) {
         // burns halve physical damage.  this is ignored by guts and facade (as of gen 6)
-        if ((sp->battlemon[attacker].condition & STATUS_BURN) && (attackerAbility != ABILITY_GUTS) && (moveno != MOVE_FACADE)) {
+        if ((sp->battlemon[attacker].condition & STATUS_BURN) && (attackerAbility != ABILITY_GUTS) && (attackerAbility != ABILITY_QUICK_FEET) && (moveno != MOVE_FACADE)) {
             damage = QMul_RoundDown(damage, UQ412__0_5);
 #ifdef DEBUG_DAMAGE_ROLLS
             for (int u = 0; u < 16; u++)
@@ -485,7 +485,7 @@ void CalcDamageOverall(void *bw, struct BattleStruct *sp) {
     }
     if (movesplit == SPLIT_SPECIAL) {
         // frostbite halves special damage.  this is ignored by guts and facade (as of gen 6)
-        if ((sp->battlemon[sp->attack_client].condition & STATUS_FROSTBITE) && (sp->battlemon[sp->attack_client].ability != ABILITY_GUTS) && (sp->current_move_index != MOVE_FACADE)) {
+        if ((sp->battlemon[attacker].condition & STATUS_FROSTBITE) && (attackerAbility != ABILITY_GUTS) && (attackerAbility != ABILITY_QUICK_FEET) && (moveno != MOVE_FACADE)) {
             damage = QMul_RoundDown(damage, UQ412__0_5);
 #ifdef DEBUG_DAMAGE_ROLLS
             for (int u = 0; u < 16; u++)

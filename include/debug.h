@@ -21,10 +21,10 @@
 //#define DEBUG_SCALED_EXPERIENCE
 
 // DEBUG_BATTLE_SCRIPT_COMMANDS prints out the battle script command names in the desmume window
-//#define DEBUG_BATTLE_SCRIPT_COMMANDS
+#define DEBUG_BATTLE_SCRIPT_COMMANDS
 
 // DEBUG_PRINT_OVERLAY_LOADS prints out overlay loads and unloads in the desmume window
-//#define DEBUG_PRINT_OVERLAY_LOADS
+#define DEBUG_PRINT_OVERLAY_LOADS
 
 // DEBUG_SOUND_SSEQ_LOADS prints out sseq loads from the SDAT and the free space left after the load.
 //#define DEBUG_SOUND_SSEQ_LOADS
@@ -54,7 +54,7 @@
 //#define DEBUG_INIT_PC_BOXES_WITH_MONS
 
 // DEBUG_PRINT_HEAP_OVERFLOW_MESSAGES will cause any crash from a heap overflow to display error information
-//#define DEBUG_PRINT_HEAP_OVERFLOW_MESSAGES
+#define DEBUG_PRINT_HEAP_OVERFLOW_MESSAGES
 
 // DEBUG_PRINT_HEAP_OVERFLOW_MESSAGES_ASSERT_FAIL will cause any GF_AssertFail call to display error information, even those that would normally in vanilla work fine
 //#define DEBUG_PRINT_HEAP_OVERFLOW_MESSAGES_ASSERT_FAIL
@@ -72,7 +72,7 @@
 //#define DEBUG_PRINT_HEAP_CREATION
 
 // DEBUG_PRINT_HEAP_ALLOCATION allows for debug prints on memory allocation/free
-//#define DEBUG_PRINT_HEAP_ALLOCATION
+#define DEBUG_PRINT_HEAP_ALLOCATION
 
 // DEBUG_DAMAGE_CALC shows debug information related to calculating damage.
 //#define DEBUG_DAMAGE_CALC

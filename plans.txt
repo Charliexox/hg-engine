@@ -1,33 +1,44 @@
 To be done (A=Now possible, B= Possible with work, C= Possible with further investigation/work ++, D= Delayed until PR, E=Not yet possible):
 
-REIMPLEMENT BERRIES and other evo items
+
+More easy hg-e fixes: 
+- KURT BALLS EXPENSIVE
+- RENAME DEPT STORE SECTIONS in txt
+- make burn do normal damage A
+- THINK ABOUT WHAT TO DO FOR NATURES
+- MERGE LEARNSETS AND CUSTOM LEARNSETS B
+- Kanto rematches to be identical to first fights but at consistent level A
+- casTFORM ON BLAINE INSTEAD OF MAGMORTAR
+- SOMETHING ON SURGE INSTEAD OF ELECTIVIRE: MANECTRIC, LUXRAY, PACHIRISU, GOLEM ALOLA
+- REMOVE SOME PORYGONS (MIRA, EUSINE, WATTSON, THORTON, ETHAN, NPCS)
+
+GF_ASSERT_INTERNAL();
+
+breaks things to see if function hooked at all. 
+
 	GRAPHICS
-- kris sprite gotta move across to the right a lil B
+- replace kris, green, matt OWs with fixed ones
 - backsprite and player stuff change for kris C 
 - VS SPRITES D (VS SPRITES IN HG-E)
 - FIXING CURRENT SPRITES with issues B
+	-Considering replacing Trainersprites: Steven, Drake, Yellow, Leaf, Lucy, Anabel
+	-Consider replacing OWs: Yellow, Glacia, Drake, Aaron (Palette), Charon (Palette), BlackFragrant (Noland, Maxie, Brandon, Tucker, Greta, Spenser)
+	-Priority replacing: Align Yellow sprites, Align Leaf sprites, Align Anabel Sprites 
 - MODEL FOR INTRO C 
 - TITLE FOR INTRO C
 - farfetchd diversity in charcoal kiln
 
 
-	MISC
-- PORTING OLD DATA B
-
 	HG-E STUFF
-- make burn do normal damage A
-- move illusion mons around to the right place A
-- consider castform instead of courtney's typhlo A
+- CONSIDER MAKING hoenn starters SIGNATURE MOVES
+- MAKE leaf blade psyblade SPECIAL NOT PHYSICAL
 - WHY ARE THERE TWO PARKERS A
 - FIX OVERWORLDS B
-- REIMPLEMENT QUICK FEET OR WHATEVER NOT NERFED ON BURN/FROSTBITE A
 - REIMPLEMENT EXPLOSION DEFENSE HALVING AND MISTY SELFDESTRUCT SPDEF ETC B
 - redistribute BACKUP movesets to other people E
-- Kanto rematches to be identical to first fights but at consistent level A
 - Kanto fights to be infinitely rematchable. B
-- REJIG castform with understanding that kanto rematches will be identical A
-- LEAF BLADE ON SPECIAL SCEPTILE FUNCTIONS LIKE PSYSHOCK A
 - MAKE EUSINE LESS op IN FIRST BATTLE (burned tower) A
+- GENDER CHANGE SCRIPT PR
 - GENDER NEUTRAL CHARACTER SELECT C 
 - GENDER NEUTRAL CHARACTER SPRITING B
 - GENDER NEUTRAL CHARACTER SWAP HOOKING C
@@ -40,6 +51,7 @@ REIMPLEMENT BERRIES and other evo items
 
 	STORY STUFF
 - Move rival from burned tower to pre-mahogany A
+----- He blocks u from crossing until you've beaten Jasmine and Chuck 
 - EUSINE BATTLING REORGANISING B
 - ROCKET MAHOGANY MESS REORGANISING B
 - PC GAMERS like celio and sutff REORGANISING B
@@ -116,28 +128,7 @@ int GetBattlerStatusCondition(struct BattleStruct *ctx, int battlerId) {
         }
 =================
 
-
 MOVE_EFFECT_RESET_STAT_CHANGES FOR HAZE
-
-    trainermontype TRAINER_DATA_TYPE_NOTHING
-    trainerclass TRAINERCLASS_HIKER
-    nummons 1
-    item ITEM_NONE
-    item ITEM_NONE
-    item ITEM_NONE
-    item ITEM_NONE
-    aiflags F_PRIORITIZE_SUPER_EFFECTIVE | F_PRIORITIZE_DAMAGE | 0
-    battletype SINGLE_BATTLE
-    endentry
-
-    party 384
-        // mon 0
-        ivs 0
-        abilityslot 32
-        level 14
-        pokemon SPECIES_ONIX
-        ballseal 0
-    endparty
 
 ==================
 

@@ -934,10 +934,8 @@ int UNUSED CalcBaseDamageInternal(struct BattleSystem *bw, struct BattleStruct *
 
             // handle Cacophony
             // TODO: confirm location
-            if (AttackingMon.ability == ABILITY_CACOPHONY && IsMoveSoundBased(sp->current_move_index)) {
-                basePowerModifier = QMul_RoundUp(basePowerModifier, UQ412__1_5);
             if (MoldBreakerAbilityCheck(sp, attacker, attacker, ABILITY_CACOPHONY) && IsMoveSoundBased(moveno)) {
-                basePowerModifier = QMul_RoundUp(basePowerModifier, UQ412__1_3);
+                basePowerModifier = QMul_RoundUp(basePowerModifier, UQ412__1_5);
             }
 
             // handle Steely Spirit for the attacker--can stack
@@ -1467,7 +1465,7 @@ int UNUSED CalcBaseDamageInternal(struct BattleSystem *bw, struct BattleStruct *
 #endif
 
     // Step 4.3. Psyshock / Psystrike / Secret Sword
-    if ((moveno == MOVE_PSYSHOCK) || (moveno == MOVE_PSYSTRIKE) || (moveno == MOVE_SECRET_SWORD)) {
+    if ((moveno == MOVE_PSYSHOCK) || (moveno == MOVE_PSYSTRIKE) || (moveno == MOVE_SECRET_SWORD) || (moveno == MOVE_LEAF_BLADE)) {
         DefendingMon.sp_defense = DefendingMon.defense;
     }
 

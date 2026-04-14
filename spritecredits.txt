@@ -68,9 +68,6 @@ TRAINERCLASS_STAT_TRAINER_MARLEY    GameFreak
 TRAINERCLASS_STAT_TRAINER_MIRA      GameFreak
 TRAINERCLASS_STAT_TRAINER_RILEY     GameFreak
 
-Considering replacing: Steven, Drake, Yellow, Leaf, Lucy, Anabel
-
-
 
 Overworld Sprites:
 
@@ -135,6 +132,3 @@ TRAINERCLASS_STAT_TRAINER_CHERYL    GameFreak
 TRAINERCLASS_STAT_TRAINER_MARLEY    GameFreak
 TRAINERCLASS_STAT_TRAINER_MIRA      GameFreak
 TRAINERCLASS_STAT_TRAINER_RILEY     GameFreak
-
-Consider replacing: Yellow, Maxie, Green (shorter, sprite looks like G5), Matt, Aaron (Palette), Charon (Palette), Noland, Glacia, Drake, Brandon, Tucker, Greta, Spenser
-

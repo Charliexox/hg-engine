@@ -2211,6 +2211,7 @@ void LONG_CALL getEquivalentAttackAndDefense(struct BattleStruct *sp, u16 attack
         case MOVE_PSYSHOCK:
         case MOVE_PSYSTRIKE:
         case MOVE_SECRET_SWORD:
+		case MOVE_LEAF_BLADE:
             *equivalentDefense = rawPhysicalDefense;
             break;
         case MOVE_PHOTON_GEYSER:

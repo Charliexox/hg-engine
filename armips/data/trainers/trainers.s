@@ -14022,85 +14022,25 @@ trainerdata 383, "Peter"
     endparty
 
 trainerdata 384, "Daniel"
-	trainermontype TRAINER_DATA_TYPE_ITEMS | TRAINER_DATA_TYPE_MOVES | TRAINER_DATA_TYPE_ABILITY | TRAINER_DATA_TYPE_IV_EV_SET | TRAINER_DATA_TYPE_NATURE_SET | TRAINER_DATA_TYPE_SHINY_LOCK    
-	trainerclass TRAINERCLASS_HIKER
-    nummons 4
+    trainermontype TRAINER_DATA_TYPE_NOTHING
+    trainerclass TRAINERCLASS_HIKER
+    nummons 1
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
     item ITEM_NONE
     aiflags F_PRIORITIZE_SUPER_EFFECTIVE | F_PRIORITIZE_DAMAGE | 0
-    battletype NO_PARTNER_DOUBLE_BATTLE
+    battletype SINGLE_BATTLE
     endentry
 
     party 384
         // mon 0
         ivs 0
-        abilityslot 0
-        level 10
-        monwithform SPECIES_SHAYMIN, 1
-		item ITEM_ASSAULT_VEST
-        move MOVE_PSYCHO_SHIFT
-        move MOVE_NONE
-        move MOVE_NONE
-        move MOVE_NONE
-		ability ABILITY_MAGMA_ARMOR
-		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
-		setevs 0, 0, 0, 0, 0, 0
-		nature NATURE_ADAMANT
-		shinylock 0
-        ballseal 0        
-		
-		// mon 1
-        ivs 0
-        abilityslot 0
-        level 10
-        pokemon SPECIES_SHARPEDO
-		item ITEM_SHARPEDONITE
-        move MOVE_PSYCHO_SHIFT
-        move MOVE_NONE
-        move MOVE_NONE
-        move MOVE_NONE
-		ability ABILITY_DRIZZLE
-		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
-		setevs 0, 0, 0, 0, 0, 0
-		nature NATURE_ADAMANT
-		shinylock 0
-        ballseal 0        
-		
-		// mon 2
-        ivs 0
-        abilityslot 0
-        level 10
-        pokemon SPECIES_SHARPEDO
-		item ITEM_LIFE_ORB
-        move MOVE_CRUNCH
-        move MOVE_LIQUIDATION
-        move MOVE_PSYCHIC_FANGS
-        move MOVE_SCREECH
-		ability ABILITY_HYDRATION
-		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
-		setevs 0, 0, 0, 0, 0, 0
-		nature NATURE_ADAMANT
-		shinylock 0
-        ballseal 0        
-		
-		// mon 3
-        ivs 0
-        abilityslot 0
-        level 10
-        pokemon SPECIES_WALREIN
-		item ITEM_LEFTOVERS
-        move MOVE_CRUNCH
-        move MOVE_LIQUIDATION
-        move MOVE_PSYCHIC_FANGS
-        move MOVE_SCREECH
-		ability ABILITY_ROUGH_SKIN
-		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
-		setevs 0, 0, 0, 0, 0, 0
-		nature NATURE_ADAMANT
-		shinylock 0
+        abilityslot 32
+        level 14
+        pokemon SPECIES_ONIX
         ballseal 0
+    endparty
 
 trainerdata 385, "Dara & Dia"
     trainermontype TRAINER_DATA_TYPE_NOTHING
@@ -17405,7 +17345,7 @@ trainerdata 486, "Proton" //PROTON1
         // mon 0
         ivs 100
         abilityslot 0
-        level 18
+        level 16
         pokemon SPECIES_MANKEY
 		item ITEM_NONE
         move MOVE_SCREECH
@@ -17439,7 +17379,7 @@ trainerdata 486, "Proton" //PROTON1
 		// mon 2
         ivs 100
         abilityslot 0
-        level 18
+        level 17
         pokemon SPECIES_CORSOLA
 		item ITEM_RINDO_BERRY
         move MOVE_WATER_GUN
@@ -23341,7 +23281,7 @@ trainerdata 669, "Mira"
         level 100
         pokemon SPECIES_PORYGON_Z
 		item ITEM_CHOICE_SPECS
-        move MOVE_TRIPLE_KICK
+        move MOVE_TRI_ATTACK
         move MOVE_PSYSHOCK
         move MOVE_THUNDERBOLT
         move MOVE_SHADOW_BALL
@@ -30957,13 +30897,13 @@ trainerdata 229, "Shelly" //Mickey
         ivs 0
         abilityslot 0
         level 80
-        pokemon SPECIES_LUMINEON
-		item ITEM_LIFE_ORB
-        move MOVE_AURORA_BEAM
-        move MOVE_DAZZLING_GLEAM
-        move MOVE_LUMINA_CRASH
-        move MOVE_TAIL_GLOW
-		ability ABILITY_MISTY_SURGE
+        pokemon SPECIES_LATIOS
+		item ITEM_LATIOSITE
+        move MOVE_LUSTER_PURGE
+        move MOVE_DRAGON_PULSE
+        move MOVE_AURA_SPHERE
+        move MOVE_WATER_PULSE
+		ability ABILITY_ILLUSION
 		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
 		setevs 0, 0, 0, 0, 0, 0
 		nature NATURE_ADAMANT
@@ -31003,18 +30943,18 @@ trainerdata 229, "Shelly" //Mickey
 		nature NATURE_ADAMANT
 		shinylock 0
         ballseal 0
-
+		
         // mon 5
         ivs 0
         abilityslot 0
         level 80
-        pokemon SPECIES_LATIOS
-		item ITEM_LATIOSITE
-        move MOVE_LUSTER_PURGE
-        move MOVE_DRAGON_PULSE
-        move MOVE_AURA_SPHERE
-        move MOVE_WATER_PULSE
-		ability ABILITY_ILLUSION
+        pokemon SPECIES_LUMINEON
+		item ITEM_LEFTOVERS
+        move MOVE_AURORA_BEAM
+        move MOVE_DAZZLING_GLEAM
+        move MOVE_LUMINA_CRASH
+        move MOVE_TAIL_GLOW
+		ability ABILITY_MULTISCALE
 		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
 		setevs 0, 0, 0, 0, 0, 0
 		nature NATURE_ADAMANT
@@ -31086,23 +31026,23 @@ trainerdata 262, "Tabitha" //Mickey
 		shinylock 0
         ballseal 0
 		        
-		// mon 3
+        // mon 3
         ivs 0
         abilityslot 0
         level 80
-        pokemon SPECIES_CLODSIRE
-		item ITEM_ROCKY_HELMET
-        move MOVE_RECOVER
-        move MOVE_STEALTH_ROCK
-        move MOVE_SPIKES
-        move MOVE_TOXIC_SPIKES
-		ability ABILITY_WATER_ABSORB
+        pokemon SPECIES_LATIAS
+		item ITEM_LATIASITE
+        move MOVE_MIST_BALL
+        move MOVE_U_TURN
+        move MOVE_PSYSHOCK
+        move MOVE_SUBSTITUTE
+		ability ABILITY_ILLUSION
 		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
 		setevs 0, 0, 0, 0, 0, 0
 		nature NATURE_ADAMANT
 		shinylock 0
         ballseal 0
-
+		
         // mon 4
         ivs 0
         abilityslot 0
@@ -31120,17 +31060,17 @@ trainerdata 262, "Tabitha" //Mickey
 		shinylock 0
         ballseal 0
 
-        // mon 5
+		// mon 5
         ivs 0
         abilityslot 0
         level 80
-        pokemon SPECIES_LATIAS
-		item ITEM_LATIASITE
-        move MOVE_MIST_BALL
-        move MOVE_U_TURN
-        move MOVE_PSYSHOCK
-        move MOVE_SUBSTITUTE
-		ability ABILITY_ILLUSION
+        pokemon SPECIES_CLODSIRE
+		item ITEM_ROCKY_HELMET
+        move MOVE_RECOVER
+        move MOVE_STEALTH_ROCK
+        move MOVE_SPIKES
+        move MOVE_TOXIC_SPIKES
+		ability ABILITY_WATER_ABSORB
 		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
 		setevs 0, 0, 0, 0, 0, 0
 		nature NATURE_ADAMANT
@@ -31167,24 +31107,24 @@ trainerdata 273, "Maxie" //Mickey
 		nature NATURE_ADAMANT
 		shinylock 0
         ballseal 0
-
+		
         // mon 1
         ivs 0
         abilityslot 0
         level 80
-        pokemon SPECIES_PORYGON_Z
-		item ITEM_WISE_GLASSES
-        move MOVE_THUNDERBOLT
-        move MOVE_SHADOW_BALL
-        move MOVE_CHARGE_BEAM
-        move MOVE_ICE_BEAM
-		ability ABILITY_ADAPTABILITY
+        pokemon SPECIES_CAMERUPT
+		item ITEM_CAMERUPTITE
+        move MOVE_EARTH_POWER
+        move MOVE_ERUPTION
+        move MOVE_SCORCHING_SANDS
+        move MOVE_STEALTH_ROCK
+		ability ABILITY_ANGER_POINT
 		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
 		setevs 0, 0, 0, 0, 0, 0
 		nature NATURE_ADAMANT
 		shinylock 0
         ballseal 0
-
+		
         // mon 2
         ivs 0
         abilityslot 0
@@ -31236,17 +31176,17 @@ trainerdata 273, "Maxie" //Mickey
 		shinylock 0
         ballseal 0
 
-        // mon 5
+		// mon 5
         ivs 0
         abilityslot 0
         level 80
-        pokemon SPECIES_CAMERUPT
-		item ITEM_CAMERUPTITE
-        move MOVE_EARTH_POWER
-        move MOVE_ERUPTION
-        move MOVE_SCORCHING_SANDS
-        move MOVE_STEALTH_ROCK
-		ability ABILITY_ANGER_POINT
+        pokemon SPECIES_PORYGON_Z
+		item ITEM_WISE_GLASSES
+        move MOVE_THUNDERBOLT
+        move MOVE_SHADOW_BALL
+        move MOVE_CHARGE_BEAM
+        move MOVE_ICE_BEAM
+		ability ABILITY_ADAPTABILITY
 		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
 		setevs 0, 0, 0, 0, 0, 0
 		nature NATURE_ADAMANT
@@ -31283,24 +31223,24 @@ trainerdata 292, "Archie" //Mickey
 		nature NATURE_ADAMANT
 		shinylock 0
         ballseal 0
-
+		
         // mon 1
         ivs 0
         abilityslot 0
         level 80
-        pokemon SPECIES_CHATOT
-		item ITEM_THROAT_SPRAY
-        move MOVE_CHATTER
-        move MOVE_FLATTER
-        move MOVE_MIMIC
-        move MOVE_BOOMBURST
-		ability ABILITY_CACOPHONY
+        pokemon SPECIES_SHARPEDO
+		item ITEM_SHARPEDONITE
+        move MOVE_PROTECT
+        move MOVE_CRUNCH
+        move MOVE_BRINE
+        move MOVE_FLIP_TURN
+		ability ABILITY_SPEED_BOOST
 		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
 		setevs 0, 0, 0, 0, 0, 0
 		nature NATURE_ADAMANT
 		shinylock 0
         ballseal 0
-
+		
         // mon 2
         ivs 0
         abilityslot 0
@@ -31356,13 +31296,13 @@ trainerdata 292, "Archie" //Mickey
         ivs 0
         abilityslot 0
         level 80
-        pokemon SPECIES_SHARPEDO
-		item ITEM_SHARPEDONITE
-        move MOVE_PROTECT
-        move MOVE_CRUNCH
-        move MOVE_BRINE
-        move MOVE_FLIP_TURN
-		ability ABILITY_SPEED_BOOST
+        pokemon SPECIES_CHATOT
+		item ITEM_THROAT_SPRAY
+        move MOVE_CHATTER
+        move MOVE_FLATTER
+        move MOVE_MIMIC
+        move MOVE_BOOMBURST
+		ability ABILITY_CACOPHONY
 		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, speed, spatt, spdef
 		setevs 0, 0, 0, 0, 0, 0
 		nature NATURE_ADAMANT

@@ -86,4 +86,38 @@ spare POKES
 		shinylock 0
         ballseal 0
 		
+				
+        // mon 3
+        ivs 250
+        abilityslot 0
+        level 72
+        pokemon SPECIES_MAGMORTAR
+        item ITEM_EXPERT_BELT
+        move MOVE_FLAME_BURST
+        move MOVE_DARK_PULSE
+        move MOVE_AURA_SPHERE
+        move MOVE_TAUNT
+		ability ABILITY_MEGA_LAUNCHER
+		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+		setevs 0, 0, 0, 0, 0, 0
+		nature NATURE_ADAMANT
+		shinylock 0
+        ballseal 0
+		
+		// mon 3
+        ivs 250
+        abilityslot 0
+        level 53
+        pokemon SPECIES_ELECTIVIRE
+        item ITEM_EXPERT_BELT
+        move MOVE_POWER_UP_PUNCH
+        move MOVE_THUNDER_PUNCH
+        move MOVE_BULLET_PUNCH
+        move MOVE_DRAIN_PUNCH
+		ability ABILITY_IRON_FIST
+		setivs 31, 31, 31, 31, 31, 31 // hp, atk, def, spd, spatk, spdef
+		setevs 0, 0, 0, 0, 0, 0
+		nature NATURE_ADAMANT
+		shinylock 0
+        ballseal 0
 =============================

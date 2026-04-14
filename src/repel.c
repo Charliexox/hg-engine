@@ -91,6 +91,11 @@ void Repel_SetCurrentType() {
 #endif
 }
 
+void LONG_CALL PlayerProfile_SetTrainerGender(struct PlayerProfile *profile, int gender) {
+GF_ASSERT_INTERNAL();
+    profile->gender = gender;
+}
+
 u32 LONG_CALL PlayerAvatar_GetSpriteByStateAndGender(u32 state, int gender) {
 	debug_printf("garbageparams\n");
 	if (gender == 0) {
