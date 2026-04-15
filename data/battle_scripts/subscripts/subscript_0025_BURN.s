@@ -21,9 +21,7 @@ _021:
     CompareMonDataToValue OPCODE_NEQ, BATTLER_CATEGORY_SIDE_EFFECT_MON, BMON_DATA_STATUS, STATUS_NONE, _243
     // Generation V: Safeguard no longer prevents status conditions inflicted by held items.
     // CompareVarToValue OPCODE_FLAG_SET, BSCRIPT_VAR_SIDE_CONDITION_STAT_CHANGE, SIDE_CONDITION_SAFEGUARD, _243
-    // Flower Veil should not be ignored by held items.
-    CheckAbility CHECK_OPCODE_HAVE, BATTLER_CATEGORY_SIDE_EFFECT_MON, ABILITY_FLOWER_VEIL, _SingleFlowerVeilGrassCheck
-    CheckAbility CHECK_OPCODE_HAVE, BATTLER_RELATIVE_ALLY|BATTLER_CATEGORY_SIDE_EFFECT_MON, ABILITY_FLOWER_VEIL, _DoubleFlowerVeilGrassCheck
+    // No Flower Veil check, as items ignore the ability.
     GoTo _CheckIfGrounded
 
 _052:
@@ -118,10 +116,18 @@ _222:
     WaitButtonABTime 30
     CompareVarToValue OPCODE_FLAG_SET, BSCRIPT_VAR_BATTLE_STATUS, BATTLE_STATUS_SYNCRONIZE, _239
     UpdateVar OPCODE_FLAG_ON, BSCRIPT_VAR_BATTLE_STATUS, BATTLE_STATUS_SYNCRONIZE
-    GoTo _243
+    TrySynchronizeStatus _233
+    CallFromVar BSCRIPT_VAR_TEMP_DATA
+
+_233:
+    TryCureStatusBerry BATTLER_CATEGORY_DEFENDER, _243
+    CallFromVar BSCRIPT_VAR_TEMP_DATA
+    End
 
 _239:
     UpdateVar OPCODE_FLAG_OFF, BSCRIPT_VAR_BATTLE_STATUS, BATTLE_STATUS_SYNCRONIZE
+    TryCureStatusBerry BATTLER_CATEGORY_SIDE_EFFECT_MON, _243
+    CallFromVar BSCRIPT_VAR_TEMP_DATA
 
 _243:
     End

@@ -419,6 +419,9 @@ $(OVERWORLDS_DIR)/1_%.bin:$(OVERWORLDS_DEPENDENCIES_DIR)/%.bin
 $(OVERWORLDS_DIR)/2_%.btx0:$(OVERWORLDS_DEPENDENCIES_DIR)/extra/%.png $(OVERWORLDS_DEPENDENCIES_DIR)/extra/%.json $(OVERWORLDS_DEPENDENCIES_DIR)/extra/%*.pal
 	$(BTX) $< $@
 
+$(OVERWORLDS_DIR)/2_%.btx0:$(OVERWORLDS_DEPENDENCIES_DIR)/custom/%.png $(OVERWORLDS_DEPENDENCIES_DIR)/custom/%.json $(OVERWORLDS_DEPENDENCIES_DIR)/custom/%*.pal
+	$(BTX) $< $@
+
 #$(OVERWORLDS_NARC): $(ALL_OVERWORLDS_SRCS) | overworld_extract $(ALL_OVERWORLDS_OBJS)
 $(OVERWORLDS_NARC): $(ALL_OVERWORLDS_SRCS) $(ALL_OVERWORLDS_OBJS)
 	$(NARCHIVE) create $@ $(OVERWORLDS_DIR) -nf
@@ -689,5 +692,6 @@ REQUIRED_DIRECTORIES += $(TRAINER_GFX_DIR)
 
 $(MSGDATA_NARC): $(MSGDATA_DEPENDENCIES) $(MSGDATA_COMPILETIME_DEPENDENCIES)
 	$(NARCHIVE) extract $(MSGDATA_TARGET) -o $(MSGDATA_DIR) -nf
+	for file in $(MSGDATA_DEPENDENCIES); do $(PYTHON) tools/source/dumptools/validate_text_archive.py $(CHARMAP) $$file || exit 1; done
 	for file in $^; do $(MSGENC) -e -c $(CHARMAP) $$file $(MSGDATA_DIR)/7_$$(basename $$file .txt); done
 	$(NARCHIVE) create $@ $(MSGDATA_DIR) -nf

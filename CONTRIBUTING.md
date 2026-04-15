@@ -7,7 +7,7 @@ These contributions are assessed based on whether or not they are "in-scope" and
 
 The overall scope of the project is first and foremost battle engine overhauls.  `hg-engine` aims to be a battle engine that ports all of the features from later generations to that of HeartGold.
 
-From there, we also have quality of life improvements.  These are things like repels that automatically prompt usage of another one,
+From there, we also have quality of life improvements.  These are things like repels that automatically prompt usage of another one as well as allowing for easy expansion and editing of the music combo tables.
 
 ## Bug Reports
 
@@ -45,43 +45,71 @@ If you have read all of this and still need help, feel free to swing by the Disc
 #### 1. Get a working local copy
 If you haven't already, follow [README.md](README.md) to get a working local copy of `hg-engine`.
 
-Make sure to set up your own fork so that you have your own repository you can push code to.
+Contributors should work from their own fork so they have a repository they can push branches to while still pulling updates from the main project.
 
-#### 2. Set hg-engine as a remote
-This will designate the main `hg-engine` repository as a remote.
+#### 2. Fork the repository
+Create your own fork of `BluRosie/hg-engine` on GitHub.
+
+#### 3. Clone your fork
+Replace `[YOUR-USERNAME]` with your GitHub username.
 ```bash
-git remote add hge https://github.com/BluRosie/hg-engine.git # You can replace hge with anything you want. This tutorial assumes you used hge.
+git clone --recursive https://github.com/[YOUR-USERNAME]/hg-engine.git
+cd hg-engine
 ```
 
-#### 3. Create a new branch
+#### 4. Set hg-engine as an upstream remote
+This designates the main `hg-engine` repository as the place you pull updates from.
+```bash
+git remote add upstream https://github.com/BluRosie/hg-engine.git
+```
+
+#### 5. Create a new branch
 This will create a new branch and switch to it.
 ```bash
 git switch -c newFeature # the name newFeature can be anything you want. This tutorial assumes you used newFeature.
 ```
 
-#### 4. Copy main to your new branch
-This will change your new branch to match the latest version of main.
+#### 6. Copy main to your new branch
+This will change your new branch to match the latest version of your local `main`.
 ```bash
 git reset --hard main
 ```
 
-#### 5. Implement your code
+#### 7. Implement your code
 All of your work should go on this new, clean branch. If you already started work on a different branch, you can [cherry-pick](https://git-scm.com/docs/git-cherry-pick) you old commits onto this new branch, or just copy and paste the changes from the original files.
 
-#### 6. Push your changes
+#### 8. Format your changes
+`hg-engine` uses the repository's `.clang-format` for C and header formatting checks.
+
+Before opening a pull request, make sure `clang-format` is installed and available on your `PATH`.
+
+Common install commands:
+- Debian/Ubuntu/WSL: `sudo apt-get install clang-format`
+- macOS with Homebrew: `brew install clang-format`
+- Arch Linux: `sudo pacman -S clang`
+- MSYS2: `pacman -S clang`
+
+Then run the following command to register the pre-commit hook that will automatically format your code before you commit it.
+```bash
+git config core.hooksPath .githooks
+```
+
+#### 9. Commit and push your changes
 When you push your first commit, you'll need to push the new branch to the remote repo.
 ```bash
 git push --set-upstream origin newFeature
 ```
 
-#### 7. Open Pull Request
-Once your work is complete and pushed to the branch on Github, you can open a [pull request from your branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork), targeting the the main branch from `hg-engine`. Please fill out the pull request description as completely as possible.
+#### 10. Open Pull Request
+Once your work is complete and pushed to the branch on Github, you can open a [pull request from your branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork), targeting the main branch from `hg-engine`. Please fill out the pull request description as completely as possible. If you are updating the battle engine, please add relevant [test cases](data/battle_tests).
 
 ### What happens after I submit a pull request?
 
 The pull request is reviewed and comments are made.  There is a little bit of a back and forth where the maintainers will comment and potentially request changes, and you will have to implement the suggestions.  After a bit, the PR will be approved at which point it is ready to merge.
 
-Contributors are responsible for responding to and updating their branch by addressing the feedback in the review. Contributors are also responsible for making sure the branch passes the checklist at all times.
+Contributors are responsible for responding to and updating their branch by addressing the feedback in the review. Contributors are also responsible for making sure the branch passes the build check at all times.
+
+There is a lot of good faith currently in the PR process that puts a little effort on the contributors to ensure that their code builds and works.  We may refuse contributions that are clearly untested or dysfunctional.
 
 #### Note
 
