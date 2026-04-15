@@ -31,7 +31,7 @@ breaks things to see if function hooked at all.
 
 	HG-E STUFF
 - CONSIDER MAKING hoenn starters SIGNATURE MOVES
-- MAKE leaf blade psyblade SPECIAL NOT PHYSICAL
+- Special coverage sceptile
 - WHY ARE THERE TWO PARKERS A
 - FIX OVERWORLDS B
 - REIMPLEMENT EXPLOSION DEFENSE HALVING AND MISTY SELFDESTRUCT SPDEF ETC B
