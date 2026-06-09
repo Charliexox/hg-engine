@@ -3,6 +3,7 @@ To be done (A=Now possible, B= Possible with work, C= Possible with further inve
 
 More easy hg-e fixes: 
 - KURT BALLS EXPENSIVE
+- Everything else less expensive
 - RENAME DEPT STORE SECTIONS in txt
 - make burn do normal damage A
 - THINK ABOUT WHAT TO DO FOR NATURES
@@ -27,6 +28,7 @@ breaks things to see if function hooked at all.
 - MODEL FOR INTRO C 
 - TITLE FOR INTRO C
 - farfetchd diversity in charcoal kiln
+- slowpoke diversity in slowpoke well
 
 
 	HG-E STUFF
@@ -55,6 +57,7 @@ breaks things to see if function hooked at all.
 - EUSINE BATTLING REORGANISING B
 - ROCKET MAHOGANY MESS REORGANISING B
 - PC GAMERS like celio and sutff REORGANISING B
+- Script to fix Kurt to be faster
 
 	UI BULLSHIT
 - ideally move the mother popup to wheree the menu X lives and add an extra UI option for pokenav C
